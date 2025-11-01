@@ -1,0 +1,62 @@
+{
+  "tema": "GIRSU Almafuerte",
+  "descripcion": "Dataset local de preguntas y respuestas sobre la Gestión Integral de Residuos Sólidos Urbanos (GIRSU) en la ciudad de Almafuerte, Córdoba, con estilo informativo y emojis para uso en Telegram.",
+  "preguntas": [
+    {
+      "pregunta": "¿Qué es GIRSU?",
+      "respuesta": "🌱 GIRSU es el Plan de Gestión Integral de Residuos Sólidos Urbanos. Su objetivo es el tratamiento integral y ambientalmente adecuado de los residuos sólidos generados en la ciudad. Separar los residuos es el primer paso para reciclar y preservar los recursos naturales ♻️."
+    },
+    {
+      "pregunta": "¿Por qué es importante separar los residuos?",
+      "respuesta": "💡 Separar los residuos permite recuperar materiales reciclables, reducir los costos ambientales y aprovechar recursos reutilizables. Es una acción clave para cuidar el ambiente desde cada hogar y comercio 🌎."
+    },
+    {
+      "pregunta": "¿Qué son los residuos comunes?",
+      "respuesta": "🗑️ Son los residuos que no se pueden reciclar, como restos de comida, frutas, verduras, papel higiénico, pañales, apósitos, bolsas de nylon, papeles de golosinas, envoltorios de fideos o arroz, espejos, tubos fluorescentes, sachets de leche, y envases de crema o queso crema. Se sacan como residuos comunes 🚮."
+    },
+    {
+      "pregunta": "¿Qué son los residuos selectivos?",
+      "respuesta": "♻️ Son los materiales reciclables como plásticos, papeles, cartones, vidrios, metales, tetrabrik y trapos de algodón. Podés colocarlos juntos en una caja de cartón o bolsa, limpios y secos, para su recolección selectiva 🧴📦."
+    },
+    {
+      "pregunta": "¿Qué son los residuos verdes?",
+      "respuesta": "🌿 Incluyen ramas, pasto y restos de poda. El pasto debe ir limpio, sin arena ni escombros, en bolsas o cajas de cartón. Las ramas deben depositarse en la vereda (sin bolsa) y no superar un metro cúbico 🌳."
+    },
+    {
+      "pregunta": "¿Cuáles son los días de recolección de residuos comunes?",
+      "respuesta": "🚛 La recolección de residuos comunes en toda la ciudad se realiza los días **lunes, miércoles y viernes** desde las 🕔 17 hs."
+    },
+    {
+      "pregunta": "¿Cuáles son los días de recolección de residuos selectivos?",
+      "respuesta": "🗓️ La recolección de residuos selectivos se realiza desde las 6 hs:\n👉 **Sector Este:** martes y viernes.\n👉 **Sector Oeste:** lunes y jueves."
+    },
+    {
+      "pregunta": "¿Cuáles son los días de recolección de residuos verdes?",
+      "respuesta": "🌳 La recolección de residuos verdes (ramas y pasto) se realiza desde las 6 hs, según el barrio:\n📅 lunes, martes, miércoles, jueves, viernes o lunes y viernes (ver mapa municipal)."
+    },
+    {
+      "pregunta": "¿Cómo separo los residuos?",
+      "respuesta": "🔹 **Reciclables:** limpios y secos, juntos en caja o bolsa.\n🔹 **No reciclables:** restos de comida, pañales, papel higiénico, etc.\n🔹 **Verdes:** ramas y pasto aparte 🌿."
+    },
+    {
+      "pregunta": "¿Dónde puedo ver el mapa de recolección?",
+      "respuesta": "🗺️ Podés consultar los mapas de recolección selectiva y de residuos verdes en las publicaciones de la Dirección de Ambiente de Almafuerte o en la guía oficial GIRSU 👉 https://youtu.be/8mC6EZeNxkIg"
+    },
+    {
+      "pregunta": "¿Dónde puedo descargar la guía para la separación de residuos?",
+      "respuesta": "📘 Podés descargar la guía oficial GIRSU desde este enlace 👉 https://share.google/zqBaGcaame5kmePxth"
+    },
+    {
+      "pregunta": "¿Cómo puedo hacer eco ladrillos o compostar?",
+      "respuesta": "♻️ Podés usar los residuos no reciclables limpios y secos para hacer eco ladrillos, o compostar restos orgánicos (como frutas y verduras) para generar abono natural 🌱. ¡Así reducís tu basura y ayudás al ambiente!"
+    },
+    {
+      "pregunta": "¿Con quién me comunico si tengo dudas sobre la recolección?",
+      "respuesta": "☎️ Podés comunicarte con la Municipalidad de Almafuerte:\n📞 +54 (3571) 558442\n 📧 municipalidad@almafuerte.gov.ar"
+    },
+    {
+      "pregunta": "¿Qué redes sociales tiene la Municipalidad de Almafuerte?",
+      "respuesta": "📱 Podés seguir a la Municipalidad de Almafuerte en **Facebook**, **YouTube** e **Instagram** para conocer las novedades sobre el GIRSU y el ambiente 🌍."
+    }
+  ]
+}
