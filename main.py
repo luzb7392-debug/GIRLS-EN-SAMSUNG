@@ -1,5 +1,4 @@
 ##################################################################################################
-#BOT IMAGEN
 # Bot de Telegram que responde usando la IA de Groq y un dataset local en JSON
 import telebot
 import requests
