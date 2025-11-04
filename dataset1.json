@@ -1,0 +1,166 @@
+{
+  "company_info": {
+    "name": "GIRSU Almafuerte",
+    "description": "Nuestra Historia\nUn compromiso con el ambiente y la comunidad\n\nEl programa GIRSU (Gestión Integral de Residuos Sólidos Urbanos) en Almafuerte nació con el propósito de transformar la forma en que tratamos los residuos, promoviendo la separación en origen, el reciclaje y la educación ambiental. Este plan se lleva adelante con la colaboración de vecinos, instituciones y la Municipalidad de Almafuerte.\n\nSobre Nosotros\nConstruyendo una ciudad más limpia y consciente\n\nEl GIRSU es una política pública que busca reducir el impacto ambiental de los residuos urbanos. Mediante la recolección diferenciada, la promoción del compostaje y la educación ambiental, se fomenta la participación ciudadana en la gestión responsable de los desechos.\n\nMisión, Visión y Valores\nLos pilares que guían nuestras acciones\n\nMisión\nReducir, reciclar y reutilizar los residuos generados en Almafuerte, promoviendo una gestión ambientalmente sostenible.\n\nVisión\nConvertir a Almafuerte en una ciudad modelo en gestión de residuos, con una comunidad activa y comprometida con el cuidado del ambiente.\n\nValores\nResponsabilidad\nFomentamos el compromiso ciudadano y ambiental.\nEducación\nPromovemos el aprendizaje sobre prácticas sostenibles.\nTrabajo en equipo\nInvolucramos a vecinos, instituciones y autoridades.\nInnovación\nAplicamos estrategias modernas para la gestión ambiental.\nRespeto\nValoramos nuestro entorno y trabajamos por su conservación.\n",
+    "mission": "Promover una gestión responsable de los residuos sólidos urbanos, basada en la participación comunitaria, la educación ambiental y la sostenibilidad.",
+    "location": {
+      "address": "Av. Vélez Sarsfield 450",
+      "city": "Almafuerte",
+      "state": "Córdoba",
+      "country": "Argentina"
+    },
+    "contact": {
+      "website": "https://almafuerte.gov.ar",
+      "emails": {
+        "info": {
+          "address": "ambiente@almafuerte.gov.ar",
+          "purpose": "Consultas generales sobre el programa GIRSU"
+        },
+        "educacion": {
+          "address": "educacionambiental@almafuerte.gov.ar",
+          "purpose": "Charlas, capacitaciones y materiales educativos"
+        }
+      },
+      "phone": "+54 3571 558442",
+      "brochure": "https://share.google/zqBaGcaame5kmePxth"
+    }
+  },
+  "leadership": {
+    "ceo": {
+      "name": "Dirección de Ambiente de Almafuerte",
+      "title": "Coordinación del Programa GIRSU",
+      "linkedin": null,
+      "roles": [
+        "Gestión ambiental",
+        "Educación y concientización ciudadana"
+      ],
+      "teaching_positions": [
+        "Charlas y capacitaciones en escuelas y comunidades"
+      ]
+    }
+  },
+  "services": {
+    "main_categories": [
+      {
+        "name": "Recolección común",
+        "description": "Recolección de residuos no reciclables, como restos de comida, pañales y envoltorios sucios 🗑️"
+      },
+      {
+        "name": "Recolección selectiva",
+        "description": "Recolección de materiales reciclables como plásticos, papeles, vidrios y metales ♻️"
+      },
+      {
+        "name": "Recolección de residuos verdes",
+        "description": "Retiro de ramas, hojas y pasto limpio, según el cronograma de barrios 🌿"
+      },
+      {
+        "name": "Educación ambiental",
+        "description": "Talleres, capacitaciones y campañas para fomentar la separación y el reciclaje en toda la comunidad 📚"
+      },
+      {
+        "name": "Puntos limpios",
+        "description": "Centros de recepción para pilas, electrónicos y aceite vegetal usado 🔋"
+      }
+    ],
+    "products": [
+      "Separación en origen de residuos",
+      "Eco ladrillos con materiales no reciclables",
+      "Compostaje domiciliario",
+      "Charlas educativas",
+      "Centro Verde de clasificación",
+      "Guía digital de separación"
+    ]
+  },
+  "pricing": [
+    {
+      "service": "Recolección domiciliaria",
+      "base_price": 0,
+      "maintenance_fee": null,
+      "currency": "ARS",
+      "maintenance_period": "servicio municipal gratuito"
+    },
+    {
+      "service": "Charlas educativas y talleres",
+      "base_price": 0,
+      "maintenance_fee": null,
+      "currency": "ARS",
+      "maintenance_period": "por solicitud institucional"
+    }
+  ],
+  "projects": {
+    "current": [
+      {
+        "name": "Plan GIRSU 2025",
+        "description": "Optimización de rutas, fortalecimiento del Centro Verde y campañas educativas masivas.",
+        "details": {
+          "platform": "Gestión municipal y comunitaria",
+          "purpose": "Reducir el volumen de residuos enviados al basural y aumentar el reciclaje",
+          "developers": "Dirección de Ambiente, vecinos y cooperativas locales",
+          "technology": "Clasificación inteligente, compostaje y campañas digitales",
+          "methodology": "Gestión ambiental participativa",
+          "status": "en implementación",
+          "availability": "vigente durante 2025"
+        }
+      }
+    ]
+  },
+  "social_media": {
+    "primary": {
+      "instagram": "https://instagram.com/municipalidaddealmafuerte",
+      "facebook": "https://facebook.com/MunicipalidadDeAlmafuerte",
+      "youtube": "https://www.youtube.com/@MunicipalidadDeAlmafuerte"
+    },
+    "secondary": {
+      "whatsapp_channel": "https://wa.me/543571558442",
+      "website": "https://almafuerte.gov.ar"
+    }
+  },
+  "demo_pages": [
+    "https://almafuerte.gov.ar/girsu",
+    "https://youtu.be/8mC6EZeNxkIg",
+    "https://share.google/zqBaGcaame5kmePxth"
+  ],
+  "faqs": [
+    {
+      "question": "¿Qué significa GIRSU?",
+      "answer": "GIRSU significa Gestión Integral de Residuos Sólidos Urbanos. Es un plan que busca tratar los residuos de forma responsable y sostenible 🌱."
+    },
+    {
+      "question": "¿Cuáles son los días de recolección de residuos comunes?",
+      "answer": "La recolección de residuos comunes se realiza los lunes, miércoles y viernes desde las 17:00 hs 🚛."
+    },
+    {
+      "question": "¿Cuáles son los días de recolección selectiva?",
+      "answer": "Sector Este: martes y viernes desde las 6:00 hs. Sector Oeste: lunes y jueves desde las 6:00 hs ♻️."
+    },
+    {
+      "question": "¿Qué materiales se reciclan?",
+      "answer": "Plásticos, papeles, cartones, metales, vidrios, tetrabriks y trapos de algodón limpios y secos 🧴📦."
+    },
+    {
+      "question": "¿Dónde puedo ver la guía de separación?",
+      "answer": "Podés descargarla en el siguiente enlace: https://share.google/zqBaGcaame5kmePxth 📘."
+    },
+    {
+      "question": "¿Qué hacer con los residuos verdes?",
+      "answer": "El pasto va en bolsas o cajas limpias; las ramas en la vereda, sin bolsa, y no deben superar un metro cúbico 🌳."
+    },
+    {
+      "question": "¿Puedo participar del programa?",
+      "answer": "Sí, separando tus residuos correctamente y respetando los días de recolección. También podés asistir a charlas y actividades 💬."
+    },
+    {
+      "question": "¿Con quién puedo comunicarme por dudas?",
+      "answer": "Podés escribir a ambiente@almafuerte.gov.ar o comunicarte al 📞 +54 3571 558442."
+    }
+  ],
+  "off_topic_handling": {
+    "technical_unrelated": "No responder preguntas no relacionadas con gestión de residuos o ambiente",
+    "personal_questions": "No responder preguntas personales",
+    "general_knowledge": "No responder preguntas generales fuera del contexto ambiental",
+    "philosophical_questions": "No responder preguntas filosóficas",
+    "entertainment": "No responder preguntas sobre entretenimiento no ambiental",
+    "politics": "No responder preguntas políticas",
+    "other_topics": "Solo responder temas vinculados al ambiente, reciclaje y limpieza urbana"
+  }
+}
