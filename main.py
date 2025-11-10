@@ -4,7 +4,7 @@ import bot_voz          # Interactuar con G-BOT
 import imagen            # Saber si un objeto es reciclable o no 
 import ia                # Saber información sobre G-BOT / cuándo pasa el basurero
 import salir             # Opción de salir
-# import analisis_de_sentimientos  # Dejanos tu opinión 
+from sentiment_analysis import analizar_sentimiento # Dejanos tu opinión 
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -18,7 +18,7 @@ def menu_principal(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
     opcion1 = types.KeyboardButton("🤖 Interactuar con G-BOT")
-    # opcion2 = types.KeyboardButton("💬 Dejanos tu opinión")  # Comentado por ahora
+    opcion2 = types.KeyboardButton("💬 Dejanos tu opinión")  # Comentado por ahora
     opcion3 = types.KeyboardButton("🚛 Saber cuándo pasa el basurero por mi casa")
     opcion4 = types.KeyboardButton("♻️ Saber si un objeto es reciclable")
     opcion5 = types.KeyboardButton("ℹ️ Saber información sobre G-BOT")
@@ -41,8 +41,8 @@ def responder_opciones(message):
     if texto == "🤖 Interactuar con G-BOT":
         bot_voz.send_welcome(message)
 
-    # elif texto == "💬 Dejanos tu opinión":
-    #     analisis_de_sentimientos.recibir_opinion(bot, message)
+    elif texto == "💬 Dejar tu opinión":
+        sentiment_analysis.analizar_sentimiento(bot, message)  # llama al análisis de sentimientos
 
     elif texto == "🚛 Saber cuándo pasa el basurero por mi casa":
         ia.responder(message)
