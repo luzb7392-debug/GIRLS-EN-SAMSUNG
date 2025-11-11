@@ -53,6 +53,7 @@
         "name": "Recolección de residuos verdes",
         "description": "Retiro de ramas, hojas y pasto limpio, según el cronograma de barrios 🌿"
       },
+      
       {
         "name": "Educación ambiental",
         "description": "Talleres, capacitaciones y campañas para fomentar la separación y el reciclaje en toda la comunidad 📚"
@@ -60,8 +61,55 @@
       {
         "name": "Puntos limpios",
         "description": "Centros de recepción para pilas, electrónicos y aceite vegetal usado 🔋"
+      },
+      
+      {
+        "name": "Recolección de residuos comunes",
+        "description": "Se realiza en toda la ciudad los días lunes, miércoles y viernes desde las 17 hs."
+      },
+      {
+       "name": "Recolección de residuos selectivos",
+        "description": "Sector Este: Martes y Viernes • Sector Oeste: Lunes y Jueves • Desde las 6 hs."
+      },
+      {
+        "name": "Recolección de residuos verdes",
+        "description": "Ramas, césped, hojas y restos de poda. El día depende del barrio. Desde las 6 hs."
+      }
+        ],
+
+          "maps": [
+      {
+        "name": "Mapa de residuos comunes y selectivos",
+        "purpose": "Mostrar cuándo pasa el camión según el sector",
+        "file": "assets/recoleccion_residuos_comunes_selectivos.png"
+      },
+      {
+        "name": "Mapa de recolección de residuos verdes",
+        "purpose": "Indicar el día por barrio para ramas, pasto y restos verdes",
+        "file": "assets/recoleccion_residuos_verdes.png"
       }
     ],
+
+  "faqs": [
+    {
+      "question": "¿Cuándo pasa el camión de residuos comunes?",
+      "answer": "Lunes, miércoles y viernes en toda la ciudad desde las 17 hs."
+    },
+    {
+      "question": "¿Qué días se recolecta el reciclaje?",
+      "answer": "Sector Este: Martes y Viernes • Sector Oeste: Lunes y Jueves desde las 6 hs."
+    },
+    {
+      "question": "¿Qué día pasan por mi barrio a buscar ramas o pasto?",
+      "answer": "Depende de tu barrio. Decíme en qué barrio estás y te digo el día exacto."
+    },
+  
+    { 
+      "bot_actions": "Recoleccion de residuos comunes y selectivos","Enviar imagen: Imagenes\recoleccion_de_residuos_comunes_y_selectivos_web_0.jpg":
+      "Recoleccion de residuos verdes", "Enviar imagen: Imagenes\recoleccion_de_residuos_verdes_web_0.jpg ":
+    }
+  ],
+
     "products": [
       "Separación en origen de residuos",
       "Eco ladrillos con materiales no reciclables",
@@ -120,6 +168,69 @@
     "https://youtu.be/8mC6EZeNxkIg",
     "https://share.google/zqBaGcaame5kmePxth"
   ],
+
+  "barrio_info": {
+  "pinares": {
+    "comunes": "🟢 Residuos comunes: Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Selectivos: Martes y viernes desde las 6 hs.",
+    "verdes": "🌿 Verdes: Lunes y viernes desde las 6 hs."
+  },
+  "tierras del este": {
+    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Martes y viernes desde las 6 hs.",
+    "verdes": "🌿 Lunes y viernes desde las 6 hs."
+  },
+  "tierras del fundador": {
+    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Martes y viernes desde las 6 hs.",
+    "verdes": "🌿 Lunes y viernes desde las 6 hs."
+  },
+  "arenales": {
+    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Martes y viernes desde las 6 hs.",
+    "verdes": "🌿 Jueves desde las 6 hs."
+  },
+  "eva perón": {
+    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
+    "verdes": "🌿 Jueves desde las 6 hs."
+  },
+  "las heras": {
+    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Martes y viernes desde las 6 hs.",
+    "verdes": "🌿 Jueves desde las 6 hs."
+  },
+  "sol de mayo": {
+    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
+    "verdes": "🌿 Martes desde las 6 hs."
+  },
+  "parque": {
+    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
+    "verdes": "🌿 Viernes desde las 6 hs."
+  },
+  "belgrano": {
+    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
+    "verdes": "🌿 Viernes desde las 6 hs."
+  },
+  "manuel belgrano": {
+    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
+    "verdes": "🌿 Miércoles desde las 6 hs."
+  },
+  "mariano moreno": {
+    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Martes y viernes desde las 6 hs.",
+    "verdes": "🌿 Miércoles desde las 6 hs."
+  },
+  "el salto": {
+    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
+    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
+    "verdes": "🌿 Lunes desde las 6 hs."
+  }
+},
   "faqs": [
     {
       "question": "¿Qué significa GIRSU?",
