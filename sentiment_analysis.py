@@ -6,6 +6,9 @@ logging.getLogger("transformers").setLevel(logging.ERROR)  # Oculta mensajes de 
 logging.getLogger("huggingface_hub").setLevel(logging.ERROR)  # Oculta mensajes del repo
 logging.getLogger("torch").setLevel(logging.ERROR)  # Oculta mensajes de PyTorch
 
+import telebot as tlb
+import os
+from dotenv import load_dotenv
 # Cargar archivo .env
 load_dotenv()
 
