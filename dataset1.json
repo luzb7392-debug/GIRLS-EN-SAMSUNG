@@ -53,7 +53,6 @@
         "name": "Recolección de residuos verdes",
         "description": "Retiro de ramas, hojas y pasto limpio, según el cronograma de barrios 🌿"
       },
-      
       {
         "name": "Educación ambiental",
         "description": "Talleres, capacitaciones y campañas para fomentar la separación y el reciclaje en toda la comunidad 📚"
@@ -62,22 +61,20 @@
         "name": "Puntos limpios",
         "description": "Centros de recepción para pilas, electrónicos y aceite vegetal usado 🔋"
       },
-      
       {
         "name": "Recolección de residuos comunes",
         "description": "Se realiza en toda la ciudad los días lunes, miércoles y viernes desde las 17 hs."
       },
       {
-       "name": "Recolección de residuos selectivos",
+        "name": "Recolección de residuos selectivos",
         "description": "Sector Este: Martes y Viernes • Sector Oeste: Lunes y Jueves • Desde las 6 hs."
       },
       {
         "name": "Recolección de residuos verdes",
         "description": "Ramas, césped, hojas y restos de poda. El día depende del barrio. Desde las 6 hs."
       }
-        ],
-
-          "maps": [
+    ],
+    "maps": [
       {
         "name": "Mapa de residuos comunes y selectivos",
         "purpose": "Mostrar cuándo pasa el camión según el sector",
@@ -89,27 +86,20 @@
         "file": "assets/recoleccion_residuos_verdes.png"
       }
     ],
-
-  "faqs": [
-    {
-      "question": "¿Cuándo pasa el camión de residuos comunes?",
-      "answer": "Lunes, miércoles y viernes en toda la ciudad desde las 17 hs."
-    },
-    {
-      "question": "¿Qué días se recolecta el reciclaje?",
-      "answer": "Sector Este: Martes y Viernes • Sector Oeste: Lunes y Jueves desde las 6 hs."
-    },
-    {
-      "question": "¿Qué día pasan por mi barrio a buscar ramas o pasto?",
-      "answer": "Depende de tu barrio. Decíme en qué barrio estás y te digo el día exacto."
-    },
-  
-    { 
-      "bot_actions": "Recoleccion de residuos comunes y selectivos","Enviar imagen: Imagenes\recoleccion_de_residuos_comunes_y_selectivos_web_0.jpg":
-      "Recoleccion de residuos verdes", "Enviar imagen: Imagenes\recoleccion_de_residuos_verdes_web_0.jpg ":
-    }
-  ],
-
+    "faqs": [
+      {
+        "question": "¿Cuándo pasa el camión de residuos comunes?",
+        "answer": "Lunes, miércoles y viernes en toda la ciudad desde las 17 hs."
+      },
+      {
+        "question": "¿Qué días se recolecta el reciclaje?",
+        "answer": "Sector Este: Martes y Viernes • Sector Oeste: Lunes y Jueves desde las 6 hs."
+      },
+      {
+        "question": "¿Qué día pasan por mi barrio a buscar ramas o pasto?",
+        "answer": "Decime tu barrio y te digo el día exacto 🌿"
+      }
+    ],
     "products": [
       "Separación en origen de residuos",
       "Eco ladrillos con materiales no reciclables",
@@ -142,12 +132,8 @@
         "description": "Optimización de rutas, fortalecimiento del Centro Verde y campañas educativas masivas.",
         "details": {
           "platform": "Gestión municipal y comunitaria",
-          "purpose": "Reducir el volumen de residuos enviados al basural y aumentar el reciclaje",
-          "developers": "Dirección de Ambiente, vecinos y cooperativas locales",
-          "technology": "Clasificación inteligente, compostaje y campañas digitales",
-          "methodology": "Gestión ambiental participativa",
-          "status": "en implementación",
-          "availability": "vigente durante 2025"
+          "purpose": "Reducir la cantidad de residuos enviados a disposición final",
+          "status": "en implementación"
         }
       }
     ]
@@ -168,110 +154,20 @@
     "https://youtu.be/8mC6EZeNxkIg",
     "https://share.google/zqBaGcaame5kmePxth"
   ],
-
   "barrio_info": {
-  "pinares": {
-    "comunes": "🟢 Residuos comunes: Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Selectivos: Martes y viernes desde las 6 hs.",
-    "verdes": "🌿 Verdes: Lunes y viernes desde las 6 hs."
+    "pinares": {
+      "comunes": "🟢 Residuos comunes: Lunes, miércoles y viernes desde las 17 hs.",
+      "selectivos": "♻️ Martes y viernes desde las 6 hs.",
+      "verdes": "🌿 Lunes y viernes desde las 6 hs."
+    }
   },
-  "tierras del este": {
-    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Martes y viernes desde las 6 hs.",
-    "verdes": "🌿 Lunes y viernes desde las 6 hs."
-  },
-  "tierras del fundador": {
-    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Martes y viernes desde las 6 hs.",
-    "verdes": "🌿 Lunes y viernes desde las 6 hs."
-  },
-  "arenales": {
-    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Martes y viernes desde las 6 hs.",
-    "verdes": "🌿 Jueves desde las 6 hs."
-  },
-  "eva perón": {
-    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
-    "verdes": "🌿 Jueves desde las 6 hs."
-  },
-  "las heras": {
-    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Martes y viernes desde las 6 hs.",
-    "verdes": "🌿 Jueves desde las 6 hs."
-  },
-  "sol de mayo": {
-    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
-    "verdes": "🌿 Martes desde las 6 hs."
-  },
-  "parque": {
-    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
-    "verdes": "🌿 Viernes desde las 6 hs."
-  },
-  "belgrano": {
-    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
-    "verdes": "🌿 Viernes desde las 6 hs."
-  },
-  "manuel belgrano": {
-    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
-    "verdes": "🌿 Miércoles desde las 6 hs."
-  },
-  "mariano moreno": {
-    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Martes y viernes desde las 6 hs.",
-    "verdes": "🌿 Miércoles desde las 6 hs."
-  },
-  "el salto": {
-    "comunes": "🟢 Lunes, miércoles y viernes desde las 17 hs.",
-    "selectivos": "♻️ Lunes y jueves desde las 6 hs.",
-    "verdes": "🌿 Lunes desde las 6 hs."
-  }
-},
   "faqs": [
     {
       "question": "¿Qué significa GIRSU?",
-      "answer": "GIRSU significa Gestión Integral de Residuos Sólidos Urbanos. Es un plan que busca tratar los residuos de forma responsable y sostenible 🌱."
-    },
-    {
-      "question": "¿Cuáles son los días de recolección de residuos comunes?",
-      "answer": "La recolección de residuos comunes se realiza los lunes, miércoles y viernes desde las 17:00 hs 🚛."
-    },
-    {
-      "question": "¿Cuáles son los días de recolección selectiva?",
-      "answer": "Sector Este: martes y viernes desde las 6:00 hs. Sector Oeste: lunes y jueves desde las 6:00 hs ♻️."
-    },
-    {
-      "question": "¿Qué materiales se reciclan?",
-      "answer": "Plásticos, papeles, cartones, metales, vidrios, tetrabriks y trapos de algodón limpios y secos 🧴📦."
-    },
-    {
-      "question": "¿Dónde puedo ver la guía de separación?",
-      "answer": "Podés descargarla en el siguiente enlace: https://share.google/zqBaGcaame5kmePxth 📘."
-    },
-    {
-      "question": "¿Qué hacer con los residuos verdes?",
-      "answer": "El pasto va en bolsas o cajas limpias; las ramas en la vereda, sin bolsa, y no deben superar un metro cúbico 🌳."
-    },
-    {
-      "question": "¿Puedo participar del programa?",
-      "answer": "Sí, separando tus residuos correctamente y respetando los días de recolección. También podés asistir a charlas y actividades 💬."
-    },
-    {
-      "question": "¿Con quién puedo comunicarme por dudas?",
-      "answer": "Podés escribir a ambiente@almafuerte.gov.ar o comunicarte al 📞 +54 3571 558442."
+      "answer": "Gestión Integral de Residuos Sólidos Urbanos 🌱"
     }
   ],
   "off_topic_handling": {
-    "technical_unrelated": "No responder preguntas no relacionadas con gestión de residuos o ambiente",
-    "personal_questions": "No responder preguntas personales",
-    "general_knowledge": "No responder preguntas generales fuera del contexto ambiental",
-    "philosophical_questions": "No responder preguntas filosóficas",
-    "entertainment": "No responder preguntas sobre entretenimiento no ambiental",
-    "politics": "No responder preguntas políticas",
-    "other_topics": "Solo responder temas vinculados al ambiente, reciclaje y limpieza urbana"
+    "technical_unrelated": "No responder temas no ambientales"
   }
 }

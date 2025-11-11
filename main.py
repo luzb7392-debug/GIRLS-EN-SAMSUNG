@@ -1,11 +1,11 @@
 import telebot
 from telebot import types
+import os
 import bot_voz          # Interactuar con G-BOT
 import imagen            # Saber si un objeto es reciclable o no 
 import ia                # Saber información sobre G-BOT / cuándo pasa el basurero
 import salir             # Opción de salir
 from sentiment_analysis import analizar_sentimiento # Dejanos tu opinión 
-import os
 from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('TELEGRAM_TOKEN')
