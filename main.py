@@ -1,66 +1,69 @@
 import telebot
 from telebot import types
 import os
-import bot_voz          # Interactuar con G-BOT
-import imagen            # Saber si un objeto es reciclable o no 
-import ia                # Saber información sobre G-BOT / cuándo pasa el basurero
-import salir             # Opción de salir
-from sentiment_analysis import analizar_sentimiento # Dejanos tu opinión 
+import bot_voz1 as bot_voz         # Interactuar con G-BOT
+import imagen           # Saber si un objeto es reciclable o no
+import ia               # Saber información sobre G-BOT / cuándo pasa el basurero
+import salir            # Opción de salir
+from sentiment_analysis import analizar_sentimiento  # Dejanos tu opinión
 from dotenv import load_dotenv
 load_dotenv()
-TOKEN = os.getenv('TELEGRAM_TOKEN')
 
+TOKEN = os.getenv('TELEGRAM_TOKEN')
 bot = telebot.TeleBot(TOKEN)
 
 # --- MENÚ PRINCIPAL ---
 @bot.message_handler(commands=['start'])
 def menu_principal(message):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup = types.InlineKeyboardMarkup()
 
-    opcion1 = types.KeyboardButton("🤖 Interactuar con G-BOT")
-    opcion2 = types.KeyboardButton("💬 Dejanos tu opinión")  # Comentado por ahora
-    opcion3 = types.KeyboardButton("🚛 Saber cuándo pasa el basurero por mi casa")
-    opcion4 = types.KeyboardButton("♻️ Saber si un objeto es reciclable")
-    opcion5 = types.KeyboardButton("ℹ️ Saber información sobre G-BOT")
-    opcion6 = types.KeyboardButton("🚪 Salir")
+    markup.add(types.InlineKeyboardButton("🤖 Interactuar con G-BOT", callback_data="interactuar"))
+    markup.add(types.InlineKeyboardButton("🚛 Saber cuándo pasa el basurero por mi casa", callback_data="basurero"))
+    markup.add(types.InlineKeyboardButton("♻️ Saber si un objeto es reciclable", callback_data="reciclable"))
+    markup.add(types.InlineKeyboardButton("ℹ️ Saber información sobre G-BOT", callback_data="info"))
+    markup.add(types.InlineKeyboardButton("💬 Dejanos tu opinión", callback_data="opinion"))
+    markup.add(types.InlineKeyboardButton("🚪 Salir", callback_data="salir"))
 
-    # markup.add(opcion1, opcion2, opcion3, opcion4, opcion5, opcion6)
-    markup.add(opcion1, opcion3, opcion4, opcion5, opcion6)  # Sin opinión
-
-    bot.send_message(
-        message.chat.id,
-        "🌱 ¡Bienvenido a G-BOT! Seleccioná una opción del menú 👇",
-        reply_markup=markup
+    mensaje = (
+        "🌱 *¡Bienvenido a G-BOT!*\n\n"
+        "Soy tu asistente para la separación de residuos y el cuidado del ambiente.\n"
+        "Elegí una opción del menú 👇"
     )
 
-# --- RESPUESTAS SEGÚN OPCIÓN ---
+    bot.send_message(message.chat.id, mensaje, parse_mode="Markdown", reply_markup=markup)
+
+
+# --- RESPUESTAS A LOS BOTONES ---
+@bot.callback_query_handler(func=lambda call: True)
+def menu_callback(call):
+    if call.data == "interactuar":
+        bot_voz.send_welcome(call.message)
+
+    elif call.data == "basurero":
+        bot.send_message(call.message.chat.id, "🏘️ Decime el *nombre de tu barrio*:", parse_mode="Markdown")
+
+    elif call.data == "reciclable":
+        bot.send_message(call.message.chat.id, "📸 Enviá una imagen y te digo si es reciclable ✅")
+
+    elif call.data == "info":
+        ia.responder(call.message)
+
+    elif call.data == "opinion":
+        analizar_sentimiento(bot, call.message)
+
+    elif call.data == "salir":
+        salir.salir(bot, call.message)
+
+
+# --- Si el usuario escribe texto (para barrios y otros casos) ---
 @bot.message_handler(func=lambda message: True)
-def responder_opciones(message):
-    texto = message.text
+def manejar_texto(message):
+    texto = message.text.lower()
 
-    if texto == "🤖 Interactuar con G-BOT":
-        bot_voz.send_welcome(message)
+    # Acá seguís manejando tus barrios o lógica antigua, si corresponde
+    bot.send_message(message.chat.id, "❓ No reconozco esa opción. Usá /start para ver el menú.")
 
-    elif texto == "💬 Dejar tu opinión":
-        sentiment_analysis.analizar_sentimiento(bot, message)  # llama al análisis de sentimientos
-
-    elif texto == "🚛 Saber cuándo pasa el basurero por mi casa":
-        ia.responder(message)
-
-    elif texto == "♻️ Saber si un objeto es reciclable":
-        bot.send_message(message.chat.id, "📸 Enviá una imagen para analizar si el objeto es reciclable.")
-        # El análisis se hace dentro del módulo imagen.py
-
-    elif texto == "ℹ️ Saber información sobre G-BOT":
-        ia.responder(message)
-
-    elif texto == "🚪 Salir":
-        salir.salir(bot, message)
-
-    else:
-        bot.send_message(message.chat.id, "❓ No reconozco esa opción. Escribí /start para ver el menú de nuevo.")
 
 if __name__ == "__main__":
     print("🚀 G-BOT principal iniciado correctamente.")
     bot.infinity_polling()
-

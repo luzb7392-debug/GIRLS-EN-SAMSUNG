@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
 ##################################################################################################
 #BOT IMAGEN (dateset1.json)
 
->>>>>>> ed9a5a3d0373808733ff519a6a37bfeecd50698f
 import os
 import telebot
 from groq import Groq
@@ -159,3 +156,4 @@ if __name__ == '__main__':
         bot.polling(none_stop=True)
     except Exception as e:
         print(f"Error al iniciar el bot: {e}")
+

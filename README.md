@@ -1,3 +1,4 @@
+#PYTHON 3.10
 # GIRLS-EN-SAMSUNG
 Repositorio del proyecto final de Samsung 🤖 GIRSU Bot ♻️
 

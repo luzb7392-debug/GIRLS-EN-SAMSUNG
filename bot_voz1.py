@@ -8,6 +8,7 @@ load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 groq_client = Groq(api_key=GROQ_API_KEY)
 
+
 # Cargar dataset
 def load_company_data():
     try:
@@ -54,7 +55,8 @@ def responder(message):
 def procesar_consulta(message):
     bot = message._bot
     consulta = message.text.strip()
-    bot.send_chat_action(message.chat.id, "typing")
+    bot.send_chat_action(message.chat.id, "escribiendo...")
     respuesta = get_groq_response(consulta)
     bot.send_message(message.chat.id, respuesta)
 
+    bot.send_message(message.chat.id, "🌱 ¡Gracias por usar G-BOT! Escribí /start para volver al menú principal.")

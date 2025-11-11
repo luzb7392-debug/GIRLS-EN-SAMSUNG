@@ -46,3 +46,5 @@ def analizar_sentimiento(bot, message):
         print("😔 Lamentamos que tu experiencia no haya sido buena.")
         sugerencia = input("¿En qué podemos mejorar? 💬 ")
         print(f"Gracias por tu comentario. Valoramos tu opinión: '{sugerencia}'")
+
+
