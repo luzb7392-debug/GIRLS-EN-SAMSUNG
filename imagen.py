@@ -7,9 +7,6 @@ from groq import Groq
 from dotenv import load_dotenv
 import requests
 
-# ==============================
-# Configuración
-# ==============================
 load_dotenv()
 
 TOKEN_BOT_TELEGRAM = os.getenv("TELEGRAM_TOKEN")
@@ -23,10 +20,21 @@ if not CLAVE_API_GROQ:
 bot = telebot.TeleBot(TOKEN_BOT_TELEGRAM)
 cliente_groq = Groq(api_key=CLAVE_API_GROQ)
 
-# ==============================
-# Funciones auxiliares
-# ==============================
+def send_welcome(mensaje):
+    """Mensaje de bienvenida"""
 
+    texto_bienvenida = """
+
+
+🖼️ **¿Cómo funciono?**
+Simplemente envíame una imagen y yo te daré una descripción detallada de lo que veo, ademas te dire si es reciclable o no reciclable
+
+📸 **¡Pruébame!**
+Envía cualquier imagen y verás lo que puedo hacer.
+
+    """
+
+#subir imagen a servidor temporal
 def subir_imagen_temporal(bytes_imagen):
     """Sube una imagen a un servidor temporal (https://0x0.st) y devuelve la URL"""
     try:
@@ -40,7 +48,7 @@ def subir_imagen_temporal(bytes_imagen):
         print(f"Error al subir imagen temporal: {e}")
         return None
 
-
+#Descripcion y clasificacion del residuo 
 def describir_imagen_con_groq(url_imagen):
     """Envía una imagen por URL a Groq y obtiene descripción + reciclabilidad"""
     try:
@@ -74,14 +82,11 @@ def describir_imagen_con_groq(url_imagen):
         print(f"Error al describir imagen con Groq: {e}")
         return None
 
-# ==============================
-# Comandos básicos
-# ==============================
+# Inicio
 
 @bot.message_handler(commands=['start'])
 def enviar_bienvenida(mensaje):
     texto = (
-        "👋 ¡Hola! Soy un bot que analiza imágenes con IA.\n\n"
         "📸 Envíame una foto de un objeto y te diré si es reciclable o no.\n\n"
         "Usa /help para más información."
     )
@@ -101,10 +106,8 @@ def enviar_ayuda(mensaje):
     )
     bot.reply_to(mensaje, texto, parse_mode='Markdown')
 
-# ==============================
-# Manejo de imágenes (foto o documento)
-# ==============================
 
+# Manejo de imágenes
 def procesar_imagen(mensaje, file_id):
     try:
         info_archivo = bot.get_file(file_id)
@@ -138,18 +141,8 @@ def manejar_documento(mensaje):
     else:
         bot.reply_to(mensaje, "❌ El archivo no parece ser una imagen.")
 
-# ==============================
-# Otros mensajes
-# ==============================
 
-@bot.message_handler(func=lambda mensaje: True)
-def manejar_otros_mensajes(mensaje):
-    bot.reply_to(mensaje, "📝 Por ahora solo puedo procesar imágenes. Envíame una foto para analizarla.")
-
-# ==============================
 # Inicio del bot
-# ==============================
-
 if __name__ == '__main__':
     print("🤖 Bot iniciado y esperando imágenes...")
     try:

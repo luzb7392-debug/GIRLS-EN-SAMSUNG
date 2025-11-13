@@ -15,7 +15,7 @@ bot = telebot.TeleBot(TOKEN)
 # --- MENÚ PRINCIPAL ---
 @bot.message_handler(commands=['start'])
 def menu_principal(message):
-    markup = types.InlineKeyboardMarkup()
+    markup = types.InlineKeyboardMarkup(row_width=1)
 
     markup.add(types.InlineKeyboardButton("🤖 Interactuar con G-BOT", callback_data="interactuar"))
     markup.add(types.InlineKeyboardButton("🚛 Saber cuándo pasa el basurero por mi casa", callback_data="basurero"))
@@ -26,18 +26,20 @@ def menu_principal(message):
 
     mensaje = (
         "🌱 *¡Bienvenido a G-BOT!*\n\n"
-        "Soy tu asistente para la separación de residuos y el cuidado del ambiente.\n"
+      "Soy tu asistente virtual para ayudarte con la *separación de residuos*, "
+        "informarte sobre los *días de recolección* y acompañarte en el cuidado del ambiente. 🌍\n\n"
+        
         "Elegí una opción del menú 👇"
     )
 
     bot.send_message(message.chat.id, mensaje, parse_mode="Markdown", reply_markup=markup)
 
 
-# --- RESPUESTAS A LOS BOTONES ---
+# RESPUESTAS A LOS BOTONES 
 @bot.callback_query_handler(func=lambda call: True)
 def menu_callback(call):
     if call.data == "interactuar":
-        bot_voz.send_welcome(call.message)
+        bot_voz.send_welcome(bot, call.message)
 
     elif call.data == "basurero":
         bot.send_message(call.message.chat.id, "🏘️ Decime el *nombre de tu barrio*:", parse_mode="Markdown")
@@ -55,7 +57,7 @@ def menu_callback(call):
         salir.salir(bot, call.message)
 
 
-# --- Si el usuario escribe texto (para barrios y otros casos) ---
+# Si el usuario escribe texto (para barrios y otros casos) 
 @bot.message_handler(func=lambda message: True)
 def manejar_texto(message):
     texto = message.text.lower()

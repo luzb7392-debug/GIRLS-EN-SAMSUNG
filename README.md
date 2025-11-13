@@ -10,7 +10,8 @@ Forma parte del plan de **Gestión Integral de Residuos Sólidos Urbanos (GIRSU)
 ## 🌱 Funciones principales
 
 - 🗓️ Consultar **días de recolección** por zona.
-- ♻️ Aprender **cómo separar residuos** (reciclables, orgánicos y no reciclables).
+- ♻️ Aprender **cómo separar residuos** (reciclables y no reciclables).
+- Enviar una imagen de residuos (foto o archivo PNG/JPG)
 - 📍 Ver **puntos limpios y ecopuntos** de la ciudad.
 - 💬 Obtener **información sobre GIRSU** y educación ambiental.
 
@@ -19,4 +20,10 @@ Forma parte del plan de **Gestión Integral de Residuos Sólidos Urbanos (GIRSU)
 
 Desarrollado por Luz Rios Becerra, Catalina Pacioni y  Brunela Abril Torres.
 
-
+BIBLIOGRAFIA:
+https://www.codigocba.com/post/colocaron-5-nuevos-contenedores-ecologicos
+https://infodecordoba.com.ar/reciclar-plastico-y-otros-objetos-en-cordoba-capital-ecopuntos-y-campanas-para-reciclaje/
+https://almafuertecba.gob.ar/ambiente-0
+https://almafuertecba.gob.ar/recoleccion-residuos
+https://almafuertecba.gob.ar/girsu
+https://almafuertecba.gob.ar/sites/default/files/girsu_separacion_de_residuos_2_0.pdf

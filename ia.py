@@ -1,5 +1,5 @@
 ##################################################################################################
-# Bot de Telegram que responde usando la IA de Groq y un dataset local en JSON
+# Bot de Telegram que responde usando la IA de Groq y dataset.json
 import telebot
 import requests
 import json
@@ -119,9 +119,3 @@ if __name__ == "__main__":
 	bot.infinity_polling()
 
 
-if __name__ == '__main__':
-    print("🤖 Bot imagen IA...")
-    try:
-        bot.polling(none_stop=True)
-    except Exception as e:
-        print(f"Error al iniciar el bot IA: {e}")
