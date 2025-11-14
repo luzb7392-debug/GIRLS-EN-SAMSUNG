@@ -1,0 +1,50 @@
+[
+  {
+    "barrio": "Las Heras",
+    "info": "En Barrio Las Heras la recolección de residuos comunes es los lunes, miércoles y viernes desde las 17 h. La recolección de residuos selectivos se realiza en el Sector Oeste los lunes y jueves desde las 6 h."
+  },
+  {
+    "barrio": "General Arenales",
+    "info": "En Barrio General Arenales la recolección de residuos comunes es los lunes, miércoles y viernes desde las 17 h. Residuos selectivos en Sector Este los martes y viernes desde las 6 h."
+  },
+  {
+    "barrio": "Manuel Belgrano",
+    "info": "En Barrio Manuel Belgrano se recoge residuos comunes lunes, miércoles y viernes a partir de las 17 h. Punto de residuos verdes: solicitá retiro municipal."
+  },
+  {
+    "barrio": "Mariano Moreno",
+    "info": "En Barrio Mariano Moreno la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. Residuos selectivos en el Sector Este los martes y viernes desde las 6 h."
+  },
+  {
+    "barrio": "Villa El Salto",
+    "info": "En Barrio Villa El Salto la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. La separación de reciclables es obligatoria."
+  },
+  {
+    "barrio": "Parque",
+    "info": "En Barrio Parque se aplica el cronograma general: residuos comunes lunes, miércoles y viernes desde las 17 h; residuos selectivos según sector."
+  },
+  {
+    "barrio": "Tierras del Fundador (Piedras Moras)",
+    "info": "En Barrio Tierras del Fundador (Piedras Moras) la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. Para residuos verdes (ramas, pasto) solicitá retiro."
+  },
+  {
+    "barrio": "Pinares",
+    "info": "En Barrio Pinares se recoge residuos comunes lunes, miércoles y viernes desde las 17 h. El cronograma de residuos selectivos es martes y viernes (Sector Este) o lunes y jueves (Sector Oeste), según dirección."
+  },
+  {
+    "barrio": "Sol de Mayo",
+    "info": "En Barrio Sol de Mayo la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. Recordá sacar los residuos antes del horario."
+  },
+  {
+    "barrio": "Belgrano",
+    "info": "En Barrio Belgrano la recolección de residuos comunes se hace lunes, miércoles y viernes desde las 17 h. Residuos selectivos según sector: martes y viernes (Este) o lunes y jueves (Oeste)."
+  },
+  {
+    "barrio": "Eva Perón",
+    "info": "En Barrio Eva Perón se aplica el cronograma general: residuos comunes lunes, miércoles y viernes desde las 17 h. Separá residuos reciclables."
+  },
+  {
+    "barrio": "Tierras del Este",
+    "info": "En Barrio Tierras del Este la recolección de residuos comunes es lunes, miércoles y viernes a partir de las 17 h. Residuos selectivos y verdes con aviso municipal."
+  }
+]

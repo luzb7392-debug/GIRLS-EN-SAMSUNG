@@ -3,117 +3,140 @@ import requests
 import json
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
-
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
+
 GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions'
-DATASET_PATH = 'dataset2.json' # Ruta al archivo JSON que contiene el dataset de preguntas y respuestas
+DATASET_PATH = 'dataset.json'
+DATASET2_PATH = 'dataset2.json'  # Nuevo dataset de barrios
 
-# Función para cargar el dataset desde el archivo JSON
+
+# -------------------------------
+# Cargar dataset principal
+# -------------------------------
 def cargar_dataset():
-	try:
-		# Abre el archivo dataset.json en modo lectura y codificación utf-8
-		with open(DATASET_PATH, 'r', encoding='utf-8') as f:
-			# Carga y retorna el contenido como una lista de diccionarios, abre, lee, codifica (utf-8), da un alias, retorna el archivo cargado
-			return json.load(f)
-	except Exception:
-		# Si hay error (por ejemplo, el archivo no existe), retorna una lista vacía
-		return []
+    try:
+        with open(DATASET_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return []
 
-#Busca una pregunta exacta en el dataset y retorna la respuesta si la encuenta
+
+# -------------------------------
+# Cargar dataset de barrios
+# -------------------------------
+def cargar_dataset2():
+    try:
+        with open(DATASET2_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return []
+
+
+# -------------------------------
+# Buscar pregunta exacta en dataset.json
+# -------------------------------
 def buscar_en_dataset(pregunta, dataset):
-	#Normaliza la pregunta(quita espacios y pasa a minusculas)
-	pregunta = pregunta.strip().lower()
-	#Recorre cada elemento del dataset 
-	for item in dataset:
-		#Compara la pregunta del usuario con la del dataset (normalizada)
-		if item['pregunta'].strip().lower() == pregunta:
-			#Si hay coincidencia exacta, retorna la respuesta 
-			return item['respuesta']
-	#Si no encuentra coicidencia
-	return None
+    pregunta = pregunta.strip().lower()
+    for item in dataset:
+        if item['pregunta'].strip().lower() == pregunta:
+            return item['respuesta']
+    return None
 
 
-# Busca una pregunta exacta en el dataset y retorna la respuesta si la encuentra
-def buscar_en_dataset(pregunta, dataset):
-	# Normaliza la pregunta (quita espacios y pasa a minúsculas)
-	pregunta = pregunta.strip().lower()
-	# Recorre cada elemento del dataset
-	for item in dataset:
-		# Compara la pregunta del usuario con la del dataset (normalizada)
-		if item['pregunta'].strip().lower() == pregunta:
-			# Si hay coincidencia exacta, retorna la respuesta
-			return item['respuesta']
-	# Si no encuentra coincidencia, retorna None
-	return None
+# -------------------------------
+# Buscar barrio en dataset2.json
+# -------------------------------
+def buscar_barrio(barrio, dataset2):
+    barrio = barrio.strip().lower()
+    for item in dataset2:
+        if item['barrio'].strip().lower() == barrio:
+            return item['info']  # clave “info” en tu dataset2.json
+    return None
 
 
-# Consulta la API de Groq para obtener una respuesta generada por IA
+# -------------------------------
+# Respuesta IA Groq
+# -------------------------------
 def respuesta_groq(mensaje):
-	# Define los headers de la petición HTTP, incluyendo la API key
-	headers = {
-		'Authorization': f'Bearer {GROQ_API_KEY}',
-		'Content-Type': 'application/json'
-	}
-	# Define el cuerpo de la petición, con el modelo y el mensaje del usuario
-	data = {
-		"model": "llama-3.1-8b-instant",
-		"messages": [
-			{"role": "user", "content": mensaje}
-		]
-	}
-      
-	try:
-		resp = requests.post(GROQ_API_URL, headers=headers, json=data, timeout=20)
-            
-		#respuesta es exitosa (código 200)
-		if resp.status_code == 200: 
-			# Extrae el contenido generado por la IA
-			respuesta = resp.json()['choices'][0]['message']['content'] #formato texto
-			return respuesta.strip()
-		else:
-			# Si hay error, retorna el código de error
-			return f"[Error Groq {resp.status_code}]"
-	except Exception as e:
-		# Si ocurre una excepción (por ejemplo, timeout), retorna el error
-		return f"[Error de conexión a Groq: {e}]"
-	
-# Crea una instancia del bot de Telegram usando el token
+    headers = {
+        'Authorization': f'Bearer {GROQ_API_KEY}',
+        'Content-Type': 'application/json'
+    }
+
+    data = {
+        "model": "llama-3.1-8b-instant",
+        "messages": [
+            {"role": "user", "content": mensaje}
+        ]
+    }
+
+    try:
+        resp = requests.post(GROQ_API_URL, headers=headers, json=data, timeout=20)
+
+        if resp.status_code == 200:
+            respuesta = resp.json()['choices'][0]['message']['content']
+            return respuesta.strip()
+        else:
+            return f"[Error Groq {resp.status_code}]"
+
+    except Exception as e:
+        return f"[Error de conexión a Groq: {e}]"
+
+
+# -------------------------------
+# Inicializar bot
+# -------------------------------
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
-# Carga el dataset al iniciar el bot
+
 dataset = cargar_dataset()
+dataset2 = cargar_dataset2()
 
 
-# Handler para los comandos /start y /help
+# -------------------------------
+# Comandos
+# -------------------------------
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-	# Responde con un mensaje de bienvenida
-	bot.send_chat_action(message.chat.id, "escribiendo")
-	bot.reply_to(message, "¡Hola! Soy un bot IA. Pregúntame algo y responderé usando IA o mi base de datos.")
+    bot.send_chat_action(message.chat.id, "typing")
+    bot.reply_to(
+        message,
+        "¡Hola! Soy un bot de gestión de residuos ♻️.\n"
+        "Podés preguntarme algo o decirme tu barrio para darte información."
+    )
 
-# Handler para cualquier otro mensaje de texto
+
+# -------------------------------
+# Handler de mensajes principales
+# -------------------------------
 @bot.message_handler(func=lambda message: True)
 def responder(message):
-	# Obtiene el texto del mensaje recibido
-	pregunta = message.text
-	# Busca la respuesta en el dataset
-	respuesta = buscar_en_dataset(pregunta, dataset)
-	if respuesta:
-		# Si la encuentra, responde con la respuesta del dataset
-        
-		bot.reply_to(message, respuesta)
-	else:
-		# Si no la encuentra, consulta la IA de Groq y responde con la respuesta generada
-		respuesta_ia = respuesta_groq(pregunta)
-		bot.reply_to(message, respuesta_ia)
 
-# Punto de entrada principal del script
+    pregunta = message.text
+
+    # 1️⃣ Buscar en dataset.json
+    respuesta = buscar_en_dataset(pregunta, dataset)
+    if respuesta:
+        bot.reply_to(message, respuesta)
+        return
+
+    # 2️⃣ Buscar si es un barrio en dataset2.json
+    respuesta_barrio = buscar_barrio(pregunta, dataset2)
+    if respuesta_barrio:
+        bot.reply_to(message, respuesta_barrio)
+        return
+
+    # 3️⃣ Si no está en ningún dataset → IA Groq
+    respuesta_ia = respuesta_groq(pregunta)
+    bot.reply_to(message, respuesta_ia)
+
+
+# -------------------------------
+# Ejecutar bot
+# -------------------------------
 if __name__ == "__main__":
-	# Imprime un mensaje en consola indicando que el bot está iniciado
-	print("Bot de Telegram IA (Groq + dataset) iniciado. Esperando mensajes...")
-	# Inicia el polling infinito para recibir mensajes de Telegram, esta constantemente a la espera que alguien use el bot
-	bot.infinity_polling()
-
-
+    print("Bot de Telegram IA (Groq + dataset + barrios) iniciado. Esperando mensajes...")
+    bot.infinity_polling()
