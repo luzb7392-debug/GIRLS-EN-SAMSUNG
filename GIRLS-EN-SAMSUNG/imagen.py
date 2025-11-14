@@ -13,19 +13,19 @@ import requests
 load_dotenv()
 
 # Configuración
-<<<<<<< HEAD
+ HEAD
 TOKEN_BOT_TELEGRAM = os.getenv('TELEGRAM_TOKEN')
 CLAVE_API_GROQ = os.getenv('GROQ_API_KEY')
 
 if not TOKEN_BOT_TELEGRAM:
     raise ValueError("TELEGRAM_TOKEN no está configurado")
-=======
+
 TOKEN_BOT_TELEGRAM = os.getenv('TELEGRAM_BOT_TOKEN')
 CLAVE_API_GROQ = os.getenv('GROQ_API_KEY')
 
 if not TOKEN_BOT_TELEGRAM:
     raise ValueError("TELEGRAM_BOT_TOKEN no está configurado")
->>>>>>> 8ade331 (Añadi remove webhook)
+ 8ade331 (Añadi remove webhook)
 if not CLAVE_API_GROQ:
     raise ValueError("GROQ_API_KEY no está configurado")
 
@@ -72,11 +72,10 @@ def describir_imagen_con_groq(imagen_base64):
 # /start
 @bot.message_handler(commands=['start'])
 def enviar_bienvenida(mensaje):
-<<<<<<< HEAD
+    HEAD
 
-=======
-    """Mensaje de bienvenida"""
->>>>>>> 8ade331 (Añadi remove webhook)
+
+    """Mensaje de bienvenida""" 8ade331 (Añadi remove webhook)
     texto_bienvenida = """
 ¡Hola! 👋 Soy un bot que describe imágenes.
 
