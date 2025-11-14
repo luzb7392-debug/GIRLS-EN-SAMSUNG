@@ -1,5 +1,5 @@
 ##################################################################################################
-# Bot de Telegram que responde usando la IA de Groq y dataset.json
+# Saber sobre girsu (dataset.json)
 import telebot
 import requests
 import json

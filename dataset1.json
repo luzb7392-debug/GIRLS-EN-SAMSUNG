@@ -1,173 +1,171 @@
 {
-  "company_info": {
-    "name": "GIRSU Almafuerte",
-    "description": "Nuestra Historia\nUn compromiso con el ambiente y la comunidad\n\nEl programa GIRSU (Gestión Integral de Residuos Sólidos Urbanos) en Almafuerte nació con el propósito de transformar la forma en que tratamos los residuos, promoviendo la separación en origen, el reciclaje y la educación ambiental. Este plan se lleva adelante con la colaboración de vecinos, instituciones y la Municipalidad de Almafuerte.\n\nSobre Nosotros\nConstruyendo una ciudad más limpia y consciente\n\nEl GIRSU es una política pública que busca reducir el impacto ambiental de los residuos urbanos. Mediante la recolección diferenciada, la promoción del compostaje y la educación ambiental, se fomenta la participación ciudadana en la gestión responsable de los desechos.\n\nMisión, Visión y Valores\nLos pilares que guían nuestras acciones\n\nMisión\nReducir, reciclar y reutilizar los residuos generados en Almafuerte, promoviendo una gestión ambientalmente sostenible.\n\nVisión\nConvertir a Almafuerte en una ciudad modelo en gestión de residuos, con una comunidad activa y comprometida con el cuidado del ambiente.\n\nValores\nResponsabilidad\nFomentamos el compromiso ciudadano y ambiental.\nEducación\nPromovemos el aprendizaje sobre prácticas sostenibles.\nTrabajo en equipo\nInvolucramos a vecinos, instituciones y autoridades.\nInnovación\nAplicamos estrategias modernas para la gestión ambiental.\nRespeto\nValoramos nuestro entorno y trabajamos por su conservación.\n",
-    "mission": "Promover una gestión responsable de los residuos sólidos urbanos, basada en la participación comunitaria, la educación ambiental y la sostenibilidad.",
-    "location": {
-      "address": "Av. Vélez Sarsfield 450",
-      "city": "Almafuerte",
-      "state": "Córdoba",
-      "country": "Argentina"
-    },
-    "contact": {
-      "website": "https://almafuerte.gov.ar",
-      "emails": {
-        "info": {
-          "address": "ambiente@almafuerte.gov.ar",
-          "purpose": "Consultas generales sobre el programa GIRSU"
+  "tema": "GIRSU Almafuerte - Dataset total para IA (texto, voz y audio)",
+  "descripcion": "Dataset completo para asistente GIRSU Almafuerte. Contiene todas las preguntas posibles sobre recolección, horarios, calles, barrios, ecopuntos, separación, tipos de residuos y excepciones.",
+  "version": "3.0 - 2025",
+  "categorias": [
+    {
+      "categoria": "Recolección por barrio",
+      "preguntas": [
+        {
+          "variantes_pregunta": [
+            "¿Cuándo pasa el basurero por el barrio San Juan?",
+            "Día de recolección en San Juan",
+            "¿A qué hora pasa el camión por San Juan?",
+            "Horario basura San Juan",
+            "¿Cuándo sacamos la basura en San Juan?",
+            "Basurero San Juan horario"
+          ],
+          "respuesta": "🚛 **Barrio San Juan** – Recolección:\n🗑️ *Residuos comunes:* **Lunes, miércoles y viernes 17:00 hs**.\n♻️ *Selectivos:* **Sector Este – Martes y viernes desde las 6:00 hs**.\n🌿 *Verdes:* **Lunes** desde las 6:00 hs."
         },
-        "educacion": {
-          "address": "educacionambiental@almafuerte.gov.ar",
-          "purpose": "Charlas, capacitaciones y materiales educativos"
+        {
+          "variantes_pregunta": [
+            "¿Cuándo pasa el basurero por el barrio Almafuerte Centro?",
+            "Basura Centro",
+            "Camión en el centro horario",
+            "Recolección en la zona centro",
+            "¿Cuándo sacar la basura en el centro?"
+          ],
+          "respuesta": "🚛 **Centro** – Recolección:\n🗑️ Comunes: **Lunes, miércoles y viernes – 17 hs**.\n♻️ Selectivos: **Sector Oeste – Lunes y jueves desde las 6 hs**.\n🌿 Verdes: **Miércoles** desde las 6 hs."
+        },
+        {
+          "variantes_pregunta": [
+            "¿Cuándo pasa el camión por barrio Parque?",
+            "Recolección en barrio Parque",
+            "Día de basura Parque",
+            "Horarios Parque residuos"
+          ],
+          "respuesta": "🚛 **Barrio Parque** – Recolección:\n🗑️ Comunes: **Lunes, miércoles y viernes a las 17 hs**.\n♻️ Selectivos: **Sector Este – Martes y viernes 6 hs**.\n🌿 Verdes: **Viernes** 6 hs."
         }
-      },
-      "phone": "+54 3571 558442",
-      "brochure": "https://share.google/zqBaGcaame5kmePxth"
-    }
-  },
-  "leadership": {
-    "ceo": {
-      "name": "Dirección de Ambiente de Almafuerte",
-      "title": "Coordinación del Programa GIRSU",
-      "linkedin": null,
-      "roles": [
-        "Gestión ambiental",
-        "Educación y concientización ciudadana"
-      ],
-      "teaching_positions": [
-        "Charlas y capacitaciones en escuelas y comunidades"
+      ]
+    },
+
+    {
+      "categoria": "Recolección por calle",
+      "preguntas": [
+        {
+          "variantes_pregunta": [
+            "¿Cuándo pasa el basurero por Calle Rivadavia?",
+            "Basura en Rivadavia horario",
+            "Rivadavia recolección",
+            "Día de basura Rivadavia"
+          ],
+          "respuesta": "🚛 **Calle Rivadavia** está en el **Sector Oeste**.\n🗑️ Comunes: **Lun – Mié – Vie 17 hs**.\n♻️ Selectivos: **Lunes y jueves 6 hs**.\n🌿 Verdes: **Miércoles 6 hs**."
+        },
+        {
+          "variantes_pregunta": [
+            "Pasan por calle Belgrano?",
+            "Recolección Belgrano",
+            "Basura Belgrano",
+            "Día y horario Belgrano"
+          ],
+          "respuesta": "🚛 **Belgrano** → Sector Este.\n🗑️ Comunes: Lunes, miércoles, viernes – 17 hs.\n♻️ Selectivos: Martes y viernes – 6 hs.\n🌿 Verdes: Lunes – 6 hs."
+        }
+      ]
+    },
+
+    {
+      "categoria": "Recolección general (cualquier consulta)",
+      "preguntas": [
+        {
+          "variantes_pregunta": [
+            "¿Cuáles son los días de recolección de residuos comunes?",
+            "Días de la basura común",
+            "Basura normal cuándo la sacó",
+            "Residuos comunes horario",
+            "¿Cuándo pasa el camión de la basura?"
+          ],
+          "respuesta": "🗑️ **Residuos comunes en toda la ciudad:**\n👉 **Lunes – Miércoles – Viernes**\n🕔 **Horario: 17:00 hs**"
+        },
+        {
+          "variantes_pregunta": [
+            "Recolección selectiva días",
+            "¿Cuándo pasan a buscar reciclables?",
+            "Día de reciclaje",
+            "Horario de los residuos reciclables"
+          ],
+          "respuesta": "♻️ **Selectivos:**\n📌 **Sector Este:** Martes y viernes desde las 6 hs.\n📌 **Sector Oeste:** Lunes y jueves desde las 6 hs."
+        },
+        {
+          "variantes_pregunta": [
+            "¿Cuándo sacó las ramas?",
+            "Residuos verdes días",
+            "Pasan a buscar ramas?",
+            "Recolección de pasto",
+            "Horario residuos verdes"
+          ],
+          "respuesta": "🌿 **Residuos verdes (pasto y ramas):** Desde las 6 hs, según barrio:\n- Lunes (Este)\n- Miércoles (Centro)\n- Viernes (Parque)\n*Consultar por barrio o calle para precisión.*"
+        }
+      ]
+    },
+
+    {
+      "categoria": "Ecopuntos",
+      "preguntas": [
+        {
+          "variantes_pregunta": [
+            "¿Dónde están los ecopuntos?",
+            "Ubicación ecopunto",
+            "Quiero llevar reciclables",
+            "Puntos verdes Almafuerte",
+            "Ecopunto más cercano"
+          ],
+          "respuesta": "♻️ **Ecopuntos de Almafuerte:**\n📍 **Plaza San Martín** – Plásticos, papel, cartón.\n📍 **Costanera Frente al Lago** – Vidrio y metal.\n📍 **Parque de los Niños** – Plástico + tapitas.\n📍 **Polideportivo Municipal** – Ramas, restos verdes y voluminosos.\n👉 Disponibles **todos los días – 24 hs**."
+        }
+      ]
+    },
+
+    {
+      "categoria": "Cómo separar residuos",
+      "preguntas": [
+        {
+          "variantes_pregunta": [
+            "¿Cómo separo los residuos?",
+            "Qué va en reciclables",
+            "Qué va en basura común",
+            "Cómo separar para el GIRSU",
+            "Clasificación de residuos"
+          ],
+          "respuesta": "🧩 **Guía rápida de separación:**\n♻️ *Reciclables:* plástico, papel, cartón, vidrio, metal, tetrabrik — **limpios y secos**.\n🗑️ *Comunes:* restos de comida, pañales, papel higiénico, sachets, envoltorios.\n🌿 *Verdes:* ramas, pasto, poda.\n♨️ *Orgánicos para compost:* cáscaras, restos vegetales.\n❌ *NO RECICLABLES:* pañales, envases con comida, telgopor sucio."
+        }
+      ]
+    },
+
+    {
+      "categoria": "Casos especiales y emergencias",
+      "preguntas": [
+        {
+          "variantes_pregunta": [
+            "¿Qué pasa si llueve?",
+            "La recolección funciona con lluvia?",
+            "Si hay tormenta pasa el camión?",
+            "Basura por mal clima"
+          ],
+          "respuesta": "⛈️ **En días de tormenta severa**, la recolección puede retrasarse o reprogramarse por seguridad.\n👉 En lluvias leves, funciona normalmente."
+        },
+        {
+          "variantes_pregunta": [
+            "Horarios feriados",
+            "Pasa el camión en feriado?",
+            "Recolección feriados"
+          ],
+          "respuesta": "📅 **Feriados nacionales:**\n🗑️ *Comunes:* normalmente se respeta el cronograma.\n♻️ *Selectivos / verdes:* pueden reprogramarse.\n👉 Se avisa siempre por redes municipales."
+        }
+      ]
+    },
+
+    {
+      "categoria": "Consultas generales",
+      "preguntas": [
+        {
+          "variantes_pregunta": [
+            "¿Con quién me comunico?",
+            "Teléfono de GIRSU",
+            "Municipalidad contacto",
+            "Necesito hacer un reclamo"
+          ],
+          "respuesta": "☎️ **Municipalidad de Almafuerte:**\n📞 +54 3571 558442\n📧 municipalidad@almafuerte.gov.ar"
+        }
       ]
     }
-  },
-  "services": {
-    "main_categories": [
-      {
-        "name": "Recolección común",
-        "description": "Recolección de residuos no reciclables, como restos de comida, pañales y envoltorios sucios 🗑️"
-      },
-      {
-        "name": "Recolección selectiva",
-        "description": "Recolección de materiales reciclables como plásticos, papeles, vidrios y metales ♻️"
-      },
-      {
-        "name": "Recolección de residuos verdes",
-        "description": "Retiro de ramas, hojas y pasto limpio, según el cronograma de barrios 🌿"
-      },
-      {
-        "name": "Educación ambiental",
-        "description": "Talleres, capacitaciones y campañas para fomentar la separación y el reciclaje en toda la comunidad 📚"
-      },
-      {
-        "name": "Puntos limpios",
-        "description": "Centros de recepción para pilas, electrónicos y aceite vegetal usado 🔋"
-      },
-      {
-        "name": "Recolección de residuos comunes",
-        "description": "Se realiza en toda la ciudad los días lunes, miércoles y viernes desde las 17 hs."
-      },
-      {
-        "name": "Recolección de residuos selectivos",
-        "description": "Sector Este: Martes y Viernes • Sector Oeste: Lunes y Jueves • Desde las 6 hs."
-      },
-      {
-        "name": "Recolección de residuos verdes",
-        "description": "Ramas, césped, hojas y restos de poda. El día depende del barrio. Desde las 6 hs."
-      }
-    ],
-    "maps": [
-      {
-        "name": "Mapa de residuos comunes y selectivos",
-        "purpose": "Mostrar cuándo pasa el camión según el sector",
-        "file": "assets/recoleccion_residuos_comunes_selectivos.png"
-      },
-      {
-        "name": "Mapa de recolección de residuos verdes",
-        "purpose": "Indicar el día por barrio para ramas, pasto y restos verdes",
-        "file": "assets/recoleccion_residuos_verdes.png"
-      }
-    ],
-    "faqs": [
-      {
-        "question": "¿Cuándo pasa el camión de residuos comunes?",
-        "answer": "Lunes, miércoles y viernes en toda la ciudad desde las 17 hs."
-      },
-      {
-        "question": "¿Qué días se recolecta el reciclaje?",
-        "answer": "Sector Este: Martes y Viernes • Sector Oeste: Lunes y Jueves desde las 6 hs."
-      },
-      {
-        "question": "¿Qué día pasan por mi barrio a buscar ramas o pasto?",
-        "answer": "Decime tu barrio y te digo el día exacto 🌿"
-      }
-    ],
-    "products": [
-      "Separación en origen de residuos",
-      "Eco ladrillos con materiales no reciclables",
-      "Compostaje domiciliario",
-      "Charlas educativas",
-      "Centro Verde de clasificación",
-      "Guía digital de separación"
-    ]
-  },
-  "pricing": [
-    {
-      "service": "Recolección domiciliaria",
-      "base_price": 0,
-      "maintenance_fee": null,
-      "currency": "ARS",
-      "maintenance_period": "servicio municipal gratuito"
-    },
-    {
-      "service": "Charlas educativas y talleres",
-      "base_price": 0,
-      "maintenance_fee": null,
-      "currency": "ARS",
-      "maintenance_period": "por solicitud institucional"
-    }
-  ],
-  "projects": {
-    "current": [
-      {
-        "name": "Plan GIRSU 2025",
-        "description": "Optimización de rutas, fortalecimiento del Centro Verde y campañas educativas masivas.",
-        "details": {
-          "platform": "Gestión municipal y comunitaria",
-          "purpose": "Reducir la cantidad de residuos enviados a disposición final",
-          "status": "en implementación"
-        }
-      }
-    ]
-  },
-  "social_media": {
-    "primary": {
-      "instagram": "https://instagram.com/municipalidaddealmafuerte",
-      "facebook": "https://facebook.com/MunicipalidadDeAlmafuerte",
-      "youtube": "https://www.youtube.com/@MunicipalidadDeAlmafuerte"
-    },
-    "secondary": {
-      "whatsapp_channel": "https://wa.me/543571558442",
-      "website": "https://almafuerte.gov.ar"
-    }
-  },
-  "demo_pages": [
-    "https://almafuerte.gov.ar/girsu",
-    "https://youtu.be/8mC6EZeNxkIg",
-    "https://share.google/zqBaGcaame5kmePxth"
-  ],
-  "barrio_info": {
-    "pinares": {
-      "comunes": "🟢 Residuos comunes: Lunes, miércoles y viernes desde las 17 hs.",
-      "selectivos": "♻️ Martes y viernes desde las 6 hs.",
-      "verdes": "🌿 Lunes y viernes desde las 6 hs."
-    }
-  },
-  "faqs": [
-    {
-      "question": "¿Qué significa GIRSU?",
-      "answer": "Gestión Integral de Residuos Sólidos Urbanos 🌱"
-    }
-  ],
-  "off_topic_handling": {
-    "technical_unrelated": "No responder temas no ambientales"
-  }
+  ]
 }

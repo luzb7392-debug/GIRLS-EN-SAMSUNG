@@ -1,3 +1,5 @@
+# INTERACTUAR CON GBOT (dataset1.json)
+# INTERACTUAR CON GBOT (Datase1.json)
 import json
 import os
 from groq import Groq
@@ -21,8 +23,7 @@ def load_company_data():
 
 company_data = load_company_data()
 
-
-# --- RESPUESTA CON GROQ ---
+# RESPUESTA CON GROQ
 def get_groq_response(user_message: str):
     if not company_data:
         return "❌ No puedo acceder a la información en este momento."
@@ -48,12 +49,12 @@ Dataset:
     return response.choices[0].message.content.strip()
 
 
-# --- BIENVENIDA ---
+# --- CONVERSACIÓN ---
 def send_welcome(bot, message):
     bienvenida = (
         "👋 ¡Hola! Soy *G-BOT*, tu asistente virtual del programa GIRSU Almafuerte 🌱\n\n"
-        "Podés escribirme o enviarme un mensaje de voz para hacerme consultas como:\n"
-        "• ¿Qué días pasa el basurero por mi barrio?\n"
+        "Podés *escribirme* o enviarme un *mensaje de voz* para hacerme consultas como:\n"
+        "• ¿Como puedo comunicarme con Girsu?\n"
         "• ¿Cómo separar los residuos?\n"
         "• ¿Qué puedo reciclar?\n\n"
         "🗣️ Escribí o mandá tu consulta ahora 👇"
@@ -62,15 +63,48 @@ def send_welcome(bot, message):
     bot.register_next_step_handler(message, lambda m: procesar_consulta(bot, m))
 
 
-# --- PROCESAMIENTO DE CONSULTAS ---
-def responder(bot, message):
-    bot.send_message(message.chat.id, "🏡 Escribí tu *dirección* o *barrio* para decirte cuándo pasa el basurero 😊", parse_mode="Markdown")
-    bot.register_next_step_handler(message, lambda m: procesar_consulta(bot, m))
-
-
+# --- PROCESAR TEXTO O AUDIO ---
 def procesar_consulta(bot, message):
-    consulta = message.text.strip()
+
+    # 🔹 Si el usuario manda un AUDIO → convertir a texto
+    if message.voice:
+        try:
+            file_info = bot.get_file(message.voice.file_id)
+            file_data = bot.download_file(file_info.file_path)
+
+            # Guardar archivo temporal
+            with open("temp.ogg", "wb") as f:
+                f.write(file_data)
+
+            # Usar Groq Whisper
+            audio_text = groq_client.audio.transcriptions.create(
+                file="temp.ogg",
+                model="whisper-large-v3-turbo"
+            )
+
+            consulta = audio_text.text.strip()
+
+        except Exception as e:
+            bot.send_message(message.chat.id, "❌ No pude procesar tu audio.")
+            print("Error conversión audio:", e)
+            return
+
+    # 🔹 Si escribió texto
+    elif message.text:
+        consulta = message.text.strip()
+
+    else:
+        bot.send_message(message.chat.id, "❗ Enviame un mensaje de voz o escribí algo.")
+        return
+
+    #  Enviar acción "escribiendo"
     bot.send_chat_action(message.chat.id, "typing")
+
+    #  Obtener respuesta IA
     respuesta = get_groq_response(consulta)
+
+    #  Responder al usuario
     bot.send_message(message.chat.id, respuesta)
-    bot.send_message(message.chat.id, "🌱 ¡Gracias por usar G-BOT! Escribí /start para volver al menú principal.")
+
+    #  Seguir conversando automáticamente
+    bot.register_next_step_handler(message, lambda m: procesar_consulta(bot, m))

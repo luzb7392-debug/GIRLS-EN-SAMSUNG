@@ -1,5 +1,5 @@
 ##################################################################################################
-#BOT IMAGEN (dateset1.json)
+#Saber si un objeto es reciclable
 
 import os
 import telebot
