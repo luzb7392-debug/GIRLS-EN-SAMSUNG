@@ -1,6 +1,6 @@
 {
   "tema": "GIRSU Almafuerte",
-  "descripcion": "Dataset local de preguntas y respuestas sobre la Gestión Integral de Residuos Sólidos Urbanos (GIRSU) en la ciudad de Almafuerte, Córdoba, con estilo informativo y emojis para uso en Telegram.",
+  "descripcion": "Dataset local de preguntas y respuestas sobre la Gestión Integral de Residuos Sólidos Urbanos (GIRSU) en la ciudad de Almafuerte, Córdoba, con estilo informativo, emojis y respuestas por barrio para uso en Telegram.",
   "preguntas": [
     {
       "pregunta": "¿Qué es GIRSU?",
@@ -24,39 +24,75 @@
     },
     {
       "pregunta": "¿Cuáles son los días de recolección de residuos comunes?",
-      "respuesta": "🚛 La recolección de residuos comunes en toda la ciudad se realiza los días **lunes, miércoles y viernes** desde las 🕔 17 hs."
+      "respuesta": "🚛 En toda la ciudad se realiza los días **lunes, miércoles y viernes** desde las 🕔 17 hs."
     },
     {
       "pregunta": "¿Cuáles son los días de recolección de residuos selectivos?",
-      "respuesta": "🗓️ La recolección de residuos selectivos se realiza desde las 6 hs:\n👉 **Sector Este:** martes y viernes.\n👉 **Sector Oeste:** lunes y jueves."
+      "respuesta": "🗓️ Desde las 6 hs:\n👉 **Sector Este:** martes y viernes.\n👉 **Sector Oeste:** lunes y jueves."
     },
     {
       "pregunta": "¿Cuáles son los días de recolección de residuos verdes?",
-      "respuesta": "🌳 La recolección de residuos verdes (ramas y pasto) se realiza desde las 6 hs, según el barrio:\n📅 lunes, martes, miércoles, jueves, viernes o lunes y viernes (ver mapa municipal)."
+      "respuesta": "🌳 Desde las 6 hs según el barrio:\n📅 lunes, martes, miércoles, jueves, viernes o lunes y viernes (ver mapa municipal)."
     },
     {
-      "pregunta": "¿Cómo separo los residuos?",
-      "respuesta": "🔹 **Reciclables:** limpios y secos, juntos en caja o bolsa.\n🔹 **No reciclables:** restos de comida, pañales, papel higiénico, etc.\n🔹 **Verdes:** ramas y pasto aparte 🌿."
+      "pregunta": "¿Cuándo pasa el basurero por mi barrio?",
+      "respuesta": "🚛 Por favor, escribí el nombre de tu barrio (por ejemplo: *Las Heras*, *Belgrano*, *El Salto*) para informarte los días y horarios de recolección según el tipo de residuo 🏘️."
+    },
+    {
+      "pregunta": "Barrio Pinares",
+      "respuesta": "🏡 *Barrio Pinares*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Martes y viernes desde las 6 hs.\n🌿 Verdes: Lunes y viernes desde las 6 hs."
+    },
+    {
+      "pregunta": "Barrio Tierras del Este",
+      "respuesta": "🏡 *Barrio Tierras del Este*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Martes y viernes desde las 6 hs.\n🌿 Verdes: Lunes y viernes desde las 6 hs."
+    },
+    {
+      "pregunta": "Barrio Tierras del Fundador",
+      "respuesta": "🏡 *Barrio Tierras del Fundador*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Martes y viernes desde las 6 hs.\n🌿 Verdes: Lunes y viernes desde las 6 hs."
+    },
+    {
+      "pregunta": "Barrio Arenales",
+      "respuesta": "🏡 *Barrio Arenales*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Martes y viernes desde las 6 hs.\n🌿 Verdes: Jueves desde las 6 hs."
+    },
+    {
+      "pregunta": "Barrio Eva Perón",
+      "respuesta": "🏡 *Barrio Eva Perón*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Lunes y jueves desde las 6 hs.\n🌿 Verdes: Jueves desde las 6 hs."
+    },
+    {
+      "pregunta": "Barrio Las Heras",
+      "respuesta": "🏡 *Barrio Las Heras*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Martes y viernes desde las 6 hs.\n🌿 Verdes: Jueves desde las 6 hs."
+    },
+    {
+      "pregunta": "Barrio Sol de Mayo",
+      "respuesta": "🏡 *Barrio Sol de Mayo*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Lunes y jueves desde las 6 hs.\n🌿 Verdes: Martes desde las 6 hs."
+    },
+    {
+      "pregunta": "Barrio Parque",
+      "respuesta": "🏡 *Barrio Parque*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Lunes y jueves desde las 6 hs.\n🌿 Verdes: Viernes desde las 6 hs."
+    },
+    {
+      "pregunta": "Barrio Belgrano",
+      "respuesta": "🏡 *Barrio Belgrano*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Lunes y jueves desde las 6 hs.\n🌿 Verdes: Viernes desde las 6 hs."
+    },
+    {
+      "pregunta": "Barrio Manuel Belgrano",
+      "respuesta": "🏡 *Barrio Manuel Belgrano*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Lunes y jueves desde las 6 hs.\n🌿 Verdes: Miércoles desde las 6 hs."
+    },
+    {
+      "pregunta": "Barrio Mariano Moreno",
+      "respuesta": "🏡 *Barrio Mariano Moreno*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Martes y viernes desde las 6 hs.\n🌿 Verdes: Miércoles desde las 6 hs."
+    },
+    {
+      "pregunta": "Barrio El Salto",
+      "respuesta": "🏡 *Barrio El Salto*:\n🗑️ Comunes: Lunes, miércoles y viernes desde las 17 hs.\n♻️ Selectivos: Lunes y jueves desde las 6 hs.\n🌿 Verdes: Lunes desde las 6 hs."
+    },
+    {
+      "pregunta": "¿Dónde están los ecopuntos?",
+      "respuesta": "🌍 Los Ecopuntos de Almafuerte reciben botellas PET, vidrio y latas de aluminio:\n1️⃣ Frente al Parador Jarana (zona del lago) 🏞️\n2️⃣ Paseo de los Artesanos 🎨\n3️⃣ Balneario Municipal (frente a la proveeduría) 🏖️\n4️⃣ Plaza San Martín (frente a la Terminal) 🌳\n5️⃣ Museo Camiare (Estación del Ferrocarril) 🚉"
     },
     {
       "pregunta": "¿Dónde puedo ver el mapa de recolección?",
-      "respuesta": "🗺️ Podés consultar los mapas de recolección selectiva y de residuos verdes en las publicaciones de la Dirección de Ambiente de Almafuerte o en la guía oficial GIRSU 👉 https://youtu.be/8mC6EZeNxkIg"
-    },
-    {
-      "pregunta": "¿Dónde puedo descargar la guía para la separación de residuos?",
-      "respuesta": "📘 Podés descargar la guía oficial GIRSU desde este enlace 👉 https://share.google/zqBaGcaame5kmePxth"
-    },
-    {
-      "pregunta": "¿Cómo puedo hacer eco ladrillos o compostar?",
-      "respuesta": "♻️ Podés usar los residuos no reciclables limpios y secos para hacer eco ladrillos, o compostar restos orgánicos (como frutas y verduras) para generar abono natural 🌱. ¡Así reducís tu basura y ayudás al ambiente!"
-    },
-    {
-      "pregunta": "¿Con quién me comunico si tengo dudas sobre la recolección?",
-      "respuesta": "☎️ Podés comunicarte con la Municipalidad de Almafuerte:\n📞 +54 (3571) 558442\n 📧 municipalidad@almafuerte.gov.ar"
-    },
-    {
-      "pregunta": "¿Qué redes sociales tiene la Municipalidad de Almafuerte?",
-      "respuesta": "📱 Podés seguir a la Municipalidad de Almafuerte en **Facebook**, **YouTube** e **Instagram** para conocer las novedades sobre el GIRSU y el ambiente 🌍."
+      "respuesta": "🗺️ Te envío los mapas oficiales de recolección. Mapa 1️⃣: residuos comunes y selectivos. Mapa 2️⃣: residuos verdes 🌿."
     }
   ]
 }

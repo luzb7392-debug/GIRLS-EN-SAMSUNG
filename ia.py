@@ -1,5 +1,5 @@
 ##################################################################################################
-# Bot de Telegram que responde usando la IA de Groq y un dataset local en JSON
+# Bot de Telegram que responde usando la IA de Groq y dataset.json
 import telebot
 import requests
 import json
