@@ -1,0 +1,6 @@
+#tokens
+.env
+#entorno
+.venv/
+venv/
+
