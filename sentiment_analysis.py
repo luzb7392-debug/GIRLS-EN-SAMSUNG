@@ -1,43 +1,52 @@
-# sentiment_analysis.py (con paso de usuario)
+import logging
+from transformers import pipeline
+
+# Ocultar warnings molestos
+logging.getLogger("transformers").setLevel(logging.ERROR)
+logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
+logging.getLogger("torch").setLevel(logging.ERROR)
+
+# Cargamos el modelo UNA SOLA VEZ (si no, tarda mucho)
+analizador = pipeline(
+    "sentiment-analysis",
+    model="distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+    revision="714eb0f"
+)
+
+# ------------------------------------------------
+# FUNCIÓN: Pedir opinión al usuario
+# ------------------------------------------------
 def pedir_opinion(bot, message):
-    """
-    Función que inicia la encuesta de opinión.
-    Pide al usuario que escriba su reseña y luego llama a analizar_sentimiento.
-    """
-    bot.send_message(message.chat.id, "💬 Escribí tu reseña sobre el servicio de recolección:")
-    bot.register_next_step_handler(message, analizar_sentimiento)
+    bot.send_message(
+        message.chat.id,
+        "💬 *Queremos saber tu opinión*\n\nEscribinos un comentario sobre el servicio:",
+        parse_mode="Markdown"
+    )
+    bot.register_next_step_handler(message, procesar_opinion)
 
-def analizar_sentimiento(message, bot):
-    """
-    Analiza si el texto del usuario es positivo o negativo usando palabras clave.
-    """
+# ------------------------------------------------
+# FUNCIÓN: Analizar sentimiento del mensaje
+# ------------------------------------------------
+def procesar_opinion(message):
+    texto = message.text
 
-    texto = message.text.lower()
+    if not texto:
+        return bot.send_message(message.chat.id, "⚠️ Debés enviar un mensaje de texto.")
 
-    positivas = ["bien", "bueno", "excelente", "genial", "me gusta", "perfecto", "muy bueno"]
-    negativas = ["mal", "malo", "horrible", "pesimo", "terrible", "no funciona", "tarde"]
+    # Analizamos el sentimiento
+    resultado = analizador(texto)[0]
+    puntaje = resultado["score"] * 100
 
-    puntaje = 0
-    for palabra in positivas:
-        if palabra in texto:
-            puntaje += 1
-    for palabra in negativas:
-        if palabra in texto:
-            puntaje -= 1
-
-    if puntaje > 0:
-        bot.send_message(
-            message.chat.id,
-            "😊 ¡Gracias por tu comentario positivo! Nos alegra que estés conforme."
-        )
-    elif puntaje < 0:
-        bot.send_message(
-            message.chat.id,
-            "😔 Lamentamos que tu experiencia no haya sido buena.\n"
-            "¡Gracias por contarnos! Lo tendremos en cuenta."
+    # Interpretación simple
+    if puntaje >= 50 and resultado["label"] == "POSITIVE":
+        respuesta = (
+            "😊 *Gracias por tu reseña positiva!*\n"
+            "Nos alegra saber que tu experiencia fue buena."
         )
     else:
-        bot.send_message(
-            message.chat.id,
-            "🙂 Gracias por tu comentario. ¡Lo tendremos en cuenta!"
+        respuesta = (
+            "😔 *Lamentamos que tu experiencia no haya sido buena.*\n"
+            "Gracias por contarnos, ¡vamos a trabajar para mejorar!"
         )
+
+    message.bot.send_message(message.chat.id, respuesta, parse_mode="Markdown")
