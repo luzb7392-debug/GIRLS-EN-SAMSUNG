@@ -1,41 +1,60 @@
-import requests
+
 import json
-import os
-from dotenv import load_dotenv
-load_dotenv()
 
-GROQ_API_KEY = os.getenv('GROQ_API_KEY')
-GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions'
-DATASET_PATH = 'dataset2.json'
+DATASET2_PATH = "dataset2.json"
 
-def cargar_dataset():
+
+def cargar_dataset2():
     try:
-        with open(DATASET_PATH, 'r', encoding='utf-8') as f:
+        with open(DATASET2_PATH, "r", encoding="utf-8") as f:
             return json.load(f)
-    except Exception:
+    except:
         return []
 
-def buscar_en_dataset(pregunta, dataset):
-    pregunta = pregunta.strip().lower()
-    for item in dataset:
-        if item['pregunta'].strip().lower() == pregunta:
-            return item['respuesta']
+
+dataset2 = cargar_dataset2()
+
+
+def buscar_barrio(barrio):
+    barrio = barrio.strip().lower()
+
+    for item in dataset2:
+        if item["barrio"].strip().lower() == barrio:
+            return item["info"]
+
     return None
 
-def respuesta_groq(mensaje):
-    headers = {
-        'Authorization': f'Bearer {GROQ_API_KEY}',
-        'Content-Type': 'application/json'
-    }
-    data = {
-        "model": "llama-3.1-8b-instant",
-        "messages": [{"role": "user", "content": mensaje}]
-    }
+
+
+# -------------------------------
+def procesar_texto(texto):
+    texto = texto.strip().lower()
+
+
+    respuesta = buscar_barrio(texto)
+
+    if respuesta:
+        return f"🚛 {respuesta}"
+
+
+    return "❌ No tengo ese barrio registrado. ¿Podés repetirlo?"
+
+
+import speech_recognition as sr
+
+def procesar_audio(ruta_audio):
+    r = sr.Recognizer()
+
     try:
-        resp = requests.post(GROQ_API_URL, headers=headers, json=data, timeout=20)
-        if resp.status_code == 200:
-            return resp.json()['choices'][0]['message']['content'].strip()
-        else:
-            return f"[Error Groq {resp.status_code}]"
+        with sr.AudioFile(ruta_audio) as source:
+            audio = r.record(source)
+
+        texto = r.recognize_google(audio, language="es-AR")
+
+
+        return procesar_texto(texto)
+
+    except sr.UnknownValueError:
+        return "⚠️ No pude entender el audio. ¿Podés repetirlo?"
     except Exception as e:
-        return f"[Error de conexión a Groq: {e}]"
+        return f"❌ Error procesando audio: {e}"
