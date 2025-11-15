@@ -21,7 +21,7 @@ Forma parte del plan de **Gestión Integral de Residuos Sólidos Urbanos (GIRSU)
 
 * 🗓️ **Consultar días de recolección**
   Consulta los horarios y días de recolección de residuos comunes, selectivos y verdes según tu barrio o calle.
-
+  -Algunos barrios para probar: Parque, Manuel Belgrano, Las Heras, Arenales.
 * ♻️ **Aprender a separar residuos**
   Guía rápida de separación de residuos: reciclables, orgánicos, verdes y no reciclables.
 
