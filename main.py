@@ -33,7 +33,7 @@ def menu_principal(message):
         "• Separacion de residuos\n"
         "• Saber cuándo pasa el basurero por tu barrio🚛\n"
         "• Identificar si un objeto es reciclable ♻️\n"
-        "• Dejar tu opiniòn para que podamos mejorar! 💬\n\n"
+        "• Dejar tu opiniòn para que podamos mejorar! 💬\n"
         "Elegí una opción 👇"
     )
 
