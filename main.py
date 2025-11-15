@@ -28,11 +28,12 @@ def menu_principal(message):
 
     mensaje = (
         "🌱 *¡Bienvenido a G-BOT!*\n\n"
-        "Puedo ayudarte con:\n"
-        "• Separación de residuos\n"
-        "• Saber cuándo pasa el basurero 🚛\n"
+        "Este bot es para residentes de la localidad de Almafuerte!\n"
+        "Mis funcionalidades son:\n"
+        "• Separacion de residuos\n"
+        "• Saber cuándo pasa el basurero por tu barrio🚛\n"
         "• Identificar si un objeto es reciclable ♻️\n"
-        "• Recibir tu opinión 💬\n\n"
+        "• Dejar tu opiniòn para que podamos mejorar! 💬\n\n"
         "Elegí una opción 👇"
     )
 
