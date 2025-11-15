@@ -1,7 +1,3 @@
-Claro 😊, te propongo un README más completo, organizado y profesional, incluyendo las funciones principales del bot y detalles sobre su uso:
-
----
-
 # GIRLS-EN-SAMSUNG
 
 **Proyecto final Samsung 🤖 – GIRSU Bot ♻️**
@@ -19,14 +15,19 @@ Forma parte del plan de **Gestión Integral de Residuos Sólidos Urbanos (GIRSU)
 
 ## 🌱 Funciones principales
 
+* 🎤 **Soporte de audio y texto**
+  Permite enviar consultas por mensaje de texto o grabaciones de voz para interactuar con el bot.
+
 * 🗓️ **Consultar días de recolección**
   Consulta los horarios y días de recolección de residuos comunes, selectivos y verdes según tu barrio o calle.
-  -Algunos barrios para probar: Parque, Manuel Belgrano, Las Heras, Arenales.
-* ♻️ **Aprender a separar residuos**
-  Guía rápida de separación de residuos: reciclables, orgánicos, verdes y no reciclables.
+  -Algunos barrios para probar: Parque, Las Heras, Arenales, Pinares...
+  -Algunas calles para probar: Rivadavia, Belgrano...
 
 * 📍 **Ubicación de ecopuntos**
   Consulta los puntos limpios de Almafuerte para llevar plásticos, vidrio, latas y otros materiales reciclables.
+
+* ♻️ **Aprender a separar residuos**
+  Guía rápida de separación de residuos: reciclables, comunes, orgánicos, verdes y no reciclables.
 
 * 💬 **Información general sobre GIRSU**
   Educación ambiental, recomendaciones y contacto con la Municipalidad para reclamos o dudas.
@@ -34,8 +35,6 @@ Forma parte del plan de **Gestión Integral de Residuos Sólidos Urbanos (GIRSU)
 * 🖼️ **Enviar imágenes de residuos**
   Permite analizar o mostrar ejemplos de residuos mediante fotos o archivos PNG/JPG.
 
-* 🎤 **Soporte de audio y texto**
-  Permite enviar consultas por mensaje de texto o grabaciones de voz para interactuar con el bot.
 
 ---
 
@@ -101,8 +100,3 @@ Forma parte del plan de **Gestión Integral de Residuos Sólidos Urbanos (GIRSU)
 * [GIRSU Almafuerte](https://almafuertecba.gob.ar/girsu)
 * [Separación de residuos PDF](https://almafuertecba.gob.ar/sites/default/files/girsu_separacion_de_residuos_2_0.pdf)
 
----
-
-Si querés, puedo hacer también **una versión visual con emojis y secciones plegables** para que quede más atractiva en GitHub, como estilo “portfolio de proyecto” 🌟.
-
-¿Querés que haga eso?

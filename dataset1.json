@@ -8,14 +8,14 @@
       "preguntas": [
         {
           "variantes_pregunta": [
-            "¿Cuándo pasa el basurero por el barrio San Juan?",
+            "¿Cuándo pasa el basurero por la calle San Juan?",
             "Día de recolección en San Juan",
             "¿A qué hora pasa el camión por San Juan?",
             "Horario basura San Juan",
             "¿Cuándo sacamos la basura en San Juan?",
             "Basurero San Juan horario"
           ],
-          "respuesta": "🚛 **Barrio San Juan** – Recolección:\n🗑️ *Residuos comunes:* **Lunes, miércoles y viernes 17:00 hs**.\n♻️ *Selectivos:* **Sector Este – Martes y viernes desde las 6:00 hs**.\n🌿 *Verdes:* **Lunes** desde las 6:00 hs."
+          "respuesta": "🚛 **Calle San Juan** – Recolección:\n🗑️ *Residuos comunes:* **Lunes, miércoles y viernes 17:00 hs**.\n♻️ *Selectivos:* **Sector Este – Martes y viernes desde las 6:00 hs**.\n🌿 *Verdes:* **Lunes** desde las 6:00 hs."
         },
         {
           "variantes_pregunta": [
@@ -109,7 +109,7 @@
             "Puntos verdes Almafuerte",
             "Ecopunto más cercano"
           ],
-          "respuesta": "♻️ **Ecopuntos de Almafuerte:**\n📍 **Plaza San Martín** – Plásticos, papel, cartón.\n📍 **Costanera Frente al Lago** – Vidrio y metal.\n📍 **Parque de los Niños** – Plástico + tapitas.\n📍 **Polideportivo Municipal** – Ramas, restos verdes y voluminosos.\n👉 Disponibles **todos los días – 24 hs**."
+          "respuesta": "♻️ *Ecopuntos de Almafuerte:*\n📍 *Plaza San Martín* – Plásticos, papel, cartón.\n📍 *Costanera Frente al Lago* – Vidrio y metal.\n📍 *Parque de los Niños (Ferrocarril)* – Plástico + tapitas.\n📍 *Polideportivo Municipal* – Ramas, restos verdes y voluminosos.\n👉 Disponibles *todos los días – 24 hs*."
         }
       ]
     },
@@ -125,7 +125,7 @@
             "Cómo separar para el GIRSU",
             "Clasificación de residuos"
           ],
-          "respuesta": "🧩 **Guía rápida de separación:**\n♻️ *Reciclables:* plástico, papel, cartón, vidrio, metal, tetrabrik — **limpios y secos**.\n🗑️ *Comunes:* restos de comida, pañales, papel higiénico, sachets, envoltorios.\n🌿 *Verdes:* ramas, pasto, poda.\n♨️ *Orgánicos para compost:* cáscaras, restos vegetales.\n❌ *NO RECICLABLES:* pañales, envases con comida, telgopor sucio."
+          "respuesta": "🧩 *Guía rápida de separación:*\n♻️ *Reciclables:* plástico, papel, cartón, vidrio, metal, tetrabrik — *limpios y secos*.\n🗑️ *Comunes:* restos de comida, pañales, papel higiénico, sachets, envoltorios.\n🌿 *Verdes:* ramas, pasto, poda.\n♨️ *Orgánicos para compost:* cáscaras, restos vegetales.\n❌ *NO RECICLABLES:* pañales, envases con comida, telgopor sucio."
         }
       ]
     },
@@ -140,7 +140,7 @@
             "Si hay tormenta pasa el camión?",
             "Basura por mal clima"
           ],
-          "respuesta": "⛈️ **En días de tormenta severa**, la recolección puede retrasarse o reprogramarse por seguridad.\n👉 En lluvias leves, funciona normalmente."
+          "respuesta": "⛈️ *En días de tormenta severa*, la recolección puede retrasarse o reprogramarse por seguridad.\n👉 En lluvias leves, funciona normalmente."
         },
         {
           "variantes_pregunta": [
@@ -148,7 +148,7 @@
             "Pasa el camión en feriado?",
             "Recolección feriados"
           ],
-          "respuesta": "📅 **Feriados nacionales:**\n🗑️ *Comunes:* normalmente se respeta el cronograma.\n♻️ *Selectivos / verdes:* pueden reprogramarse.\n👉 Se avisa siempre por redes municipales."
+          "respuesta": "📅 *Feriados nacionales:*\n🗑️ *Comunes:* normalmente se respeta el cronograma.\n♻️ *Selectivos / verdes:* pueden reprogramarse.\n👉 Se avisa siempre por redes municipales."
         }
       ]
     },
@@ -163,7 +163,7 @@
             "Municipalidad contacto",
             "Necesito hacer un reclamo"
           ],
-          "respuesta": "☎️ **Municipalidad de Almafuerte:**\n📞 +54 3571 558442\n📧 municipalidad@almafuerte.gov.ar"
+          "respuesta": "☎️ *Municipalidad de Almafuerte:*\n📞 +54 3571 558442\n📧 municipalidad@almafuerte.gov.ar"
         }
       ]
     }
