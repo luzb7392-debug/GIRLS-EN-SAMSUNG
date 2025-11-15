@@ -1,143 +1,144 @@
 
-[
-  {
-    "barrio": "Las Heras",
-    "info": "En Barrio Las Heras la recolección de residuos comunes es los lunes, miércoles y viernes desde las 17 h. La recolección de residuos selectivos se realiza en el Sector Oeste los lunes y jueves desde las 6 h."
-  },
-  {
-    "barrio": "General Arenales",
-    "info": "En Barrio General Arenales la recolección de residuos comunes es los lunes, miércoles y viernes desde las 17 h. Residuos selectivos en Sector Este los martes y viernes desde las 6 h."
-  },
-  {
-    "barrio": "Manuel Belgrano",
-    "info": "En Barrio Manuel Belgrano se recoge residuos comunes lunes, miércoles y viernes a partir de las 17 h. Punto de residuos verdes: solicitá retiro municipal."
-  },
-  {
-    "barrio": "Mariano Moreno",
-    "info": "En Barrio Mariano Moreno la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. Residuos selectivos en el Sector Este los martes y viernes desde las 6 h."
-  },
-  {
-    "barrio": "Villa El Salto",
-    "info": "En Barrio Villa El Salto la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. La separación de reciclables es obligatoria."
-  },
-  {
-    "barrio": "Parque",
-    "info": "En Barrio Parque se aplica el cronograma general: residuos comunes lunes, miércoles y viernes desde las 17 h; residuos selectivos según sector."
-  },
-  {
-    "barrio": "Tierras del Fundador (Piedras Moras)",
-    "info": "En Barrio Tierras del Fundador (Piedras Moras) la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. Para residuos verdes (ramas, pasto) solicitá retiro."
-  },
-  {
-    "barrio": "Pinares",
-    "info": "En Barrio Pinares se recoge residuos comunes lunes, miércoles y viernes desde las 17 h. El cronograma de residuos selectivos es martes y viernes (Sector Este) o lunes y jueves (Sector Oeste), según dirección."
-  },
-  {
-    "barrio": "Sol de Mayo",
-    "info": "En Barrio Sol de Mayo la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. Recordá sacar los residuos antes del horario."
-  },
-  {
-    "barrio": "Belgrano",
-    "info": "En Barrio Belgrano la recolección de residuos comunes se hace lunes, miércoles y viernes desde las 17 h. Residuos selectivos según sector: martes y viernes (Este) o lunes y jueves (Oeste)."
-  },
-  {
-    "barrio": "Eva Perón",
-    "info": "En Barrio Eva Perón se aplica el cronograma general: residuos comunes lunes, miércoles y viernes desde las 17 h. Separá residuos reciclables."
-  },
-  {
-    "barrio": "Tierras del Este",
-    "info": "En Barrio Tierras del Este la recolección de residuos comunes es lunes, miércoles y viernes a partir de las 17 h. Residuos selectivos y verdes con aviso municipal."
-  }
-]
-
-
 {
-  "tema": "Recolección por calles - Almafuerte",
-  "descripcion": "Dataset con días y horarios exactos de recolección (comunes, selectivos y verdes) por cada barrio y sector de la ciudad de Almafuerte.",
-  "calles": [
-    {
-      "barrio": "Pinares",
-      "calles": ["Misiones", "Río Cuarto", "Río Tercero", "Río Quinto", "Río Segundo", "Av. Dottori"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
-      "verdes": { "dias": ["Lunes", "Viernes"], "hora": "06:00" }
-    },
-    {
-      "barrio": "Tierras del Este",
-      "calles": ["Franklin", "Pasteur", "J.B. Pazos", "Brasil", "Uruguay", "25 de Mayo", "Castelli"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
-      "verdes": { "dias": ["Lunes", "Viernes"], "hora": "06:00" }
-    },
-    {
-      "barrio": "Tierras del Fundador",
-      "calles": ["Killa Pura", "Apu Waira", "Runa Kay", "Mayu Maman", "Rapacina", "Anka Kay"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
-      "verdes": { "dias": ["Lunes", "Viernes"], "hora": "06:00" }
-    },
-    {
-      "barrio": "Arenales",
-      "calles": ["Belgrano", "Chile", "Paraguay", "España", "Italia"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
-      "verdes": { "dias": ["Jueves"], "hora": "06:00" }
-    },
+  "barrios": [
     {
       "barrio": "Las Heras",
-      "calles": ["Urquiza", "Mitre", "Urdapilleta", "Roca", "Saavedra", "Entre Ríos"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
-      "verdes": { "dias": ["Jueves"], "hora": "06:00" }
+      "info": "En Barrio Las Heras la recolección de residuos comunes es los lunes, miércoles y viernes desde las 17 h. La recolección de residuos selectivos se realiza en el Sector Oeste los lunes y jueves desde las 6 h."
     },
     {
-      "barrio": "Eva Perón",
-      "calles": ["Fragueiro", "Palacios", "Gardel", "Santa Fe"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
-      "verdes": { "dias": ["Jueves"], "hora": "06:00" }
-    },
-    {
-      "barrio": "Sol de Mayo",
-      "calles": ["Sarmiento", "9 de Julio", "España", "Italia", "J.M. Estrada"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
-      "verdes": { "dias": ["Martes"], "hora": "06:00" }
-    },
-    {
-      "barrio": "Parque",
-      "calles": ["Paso", "Sarmiento", "San Martín", "Chile", "Paraguay"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
-      "verdes": { "dias": ["Viernes"], "hora": "06:00" }
-    },
-    {
-      "barrio": "Belgrano",
-      "calles": ["Belgrano", "Lavalle", "Entre Ríos", "San Luis"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
-      "verdes": { "dias": ["Viernes"], "hora": "06:00" }
+      "barrio": "General Arenales",
+      "info": "En Barrio General Arenales la recolección de residuos comunes es los lunes, miércoles y viernes desde las 17 h. Residuos selectivos en Sector Este los martes y viernes desde las 6 h."
     },
     {
       "barrio": "Manuel Belgrano",
-      "calles": ["Rivadavia", "Mitre", "San Juan", "Entre Ríos"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
-      "verdes": { "dias": ["Miércoles"], "hora": "06:00" }
+      "info": "En Barrio Manuel Belgrano se recoge residuos comunes lunes, miércoles y viernes a partir de las 17 h. Punto de residuos verdes: solicitá retiro municipal."
     },
     {
       "barrio": "Mariano Moreno",
-      "calles": ["Corrientes", "O'Higgins", "Rawson", "Scavuzzo", "E. Orozco"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
-      "verdes": { "dias": ["Miércoles"], "hora": "06:00" }
+      "info": "En Barrio Mariano Moreno la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. Residuos selectivos en el Sector Este los martes y viernes desde las 6 h."
     },
     {
-      "barrio": "El Salto",
-      "calles": ["Sta. Cruz", "Cabo de Hornos", "Tierra del Fuego", "Abraham Molina"],
-      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
-      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
-      "verdes": { "dias": ["Lunes"], "hora": "06:00" }
+      "barrio": "Villa El Salto",
+      "info": "En Barrio Villa El Salto la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. La separación de reciclables es obligatoria."
+    },
+    {
+      "barrio": "Parque",
+      "info": "En Barrio Parque se aplica el cronograma general: residuos comunes lunes, miércoles y viernes desde las 17 h; residuos selectivos según sector."
+    },
+    {
+      "barrio": "Tierras del Fundador (Piedras Moras)",
+      "info": "En Barrio Tierras del Fundador (Piedras Moras) la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. Para residuos verdes (ramas, pasto) solicitá retiro."
+    },
+    {
+      "barrio": "Pinares",
+      "info": "En Barrio Pinares se recoge residuos comunes lunes, miércoles y viernes desde las 17 h. El cronograma de residuos selectivos es martes y viernes (Sector Este) o lunes y jueves (Sector Oeste), según dirección."
+    },
+    {
+      "barrio": "Sol de Mayo",
+      "info": "En Barrio Sol de Mayo la recolección de residuos comunes es lunes, miércoles y viernes desde las 17 h. Recordá sacar los residuos antes del horario."
+    },
+    {
+      "barrio": "Belgrano",
+      "info": "En Barrio Belgrano la recolección de residuos comunes se hace lunes, miércoles y viernes desde las 17 h. Residuos selectivos según sector: martes y viernes (Este) o lunes y jueves (Oeste)."
+    },
+    {
+      "barrio": "Eva Perón",
+      "info": "En Barrio Eva Perón se aplica el cronograma general: residuos comunes lunes, miércoles y viernes desde las 17 h. Separá residuos reciclables."
+    },
+    {
+      "barrio": "Tierras del Este",
+      "info": "En Barrio Tierras del Este la recolección de residuos comunes es lunes, miércoles y viernes a partir de las 17 h. Residuos selectivos y verdes con aviso municipal."
     }
-  ]
+  ],
+
+  "calles_por_barrio": {
+    "tema": "Recolección por calles - Almafuerte",
+    "descripcion": "Dataset con días y horarios exactos de recolección (comunes, selectivos y verdes) por cada barrio y sector de la ciudad de Almafuerte.",
+    "calles": [
+      {
+        "barrio": "Pinares",
+        "calles": ["Misiones", "Río Cuarto", "Río Tercero", "Río Quinto", "Río Segundo", "Av. Dottori"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+        "verdes": { "dias": ["Lunes", "Viernes"], "hora": "06:00" }
+      },
+      {
+        "barrio": "Tierras del Este",
+        "calles": ["Franklin", "Pasteur", "J.B. Pazos", "Brasil", "Uruguay", "25 de Mayo", "Castelli"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+        "verdes": { "dias": ["Lunes", "Viernes"], "hora": "06:00" }
+      },
+      {
+        "barrio": "Tierras del Fundador",
+        "calles": ["Killa Pura", "Apu Waira", "Runa Kay", "Mayu Maman", "Rapacina", "Anka Kay"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+        "verdes": { "dias": ["Lunes", "Viernes"], "hora": "06:00" }
+      },
+      {
+        "barrio": "Arenales",
+        "calles": ["Belgrano", "Chile", "Paraguay", "España", "Italia"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+        "verdes": { "dias": ["Jueves"], "hora": "06:00" }
+      },
+      {
+        "barrio": "Las Heras",
+        "calles": ["Urquiza", "Mitre", "Urdapilleta", "Roca", "Saavedra", "Entre Ríos"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+        "verdes": { "dias": ["Jueves"], "hora": "06:00" }
+      },
+      {
+        "barrio": "Eva Perón",
+        "calles": ["Fragueiro", "Palacios", "Gardel", "Santa Fe"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+        "verdes": { "dias": ["Jueves"], "hora": "06:00" }
+      },
+      {
+        "barrio": "Sol de Mayo",
+        "calles": ["Sarmiento", "9 de Julio", "España", "Italia", "J.M. Estrada"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+        "verdes": { "dias": ["Martes"], "hora": "06:00" }
+      },
+      {
+        "barrio": "Parque",
+        "calles": ["Paso", "Sarmiento", "San Martín", "Chile", "Paraguay"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+        "verdes": { "dias": ["Viernes"], "hora": "06:00" }
+      },
+      {
+        "barrio": "Belgrano",
+        "calles": ["Belgrano", "Lavalle", "Entre Ríos", "San Luis"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+        "verdes": { "dias": ["Viernes"], "hora": "06:00" }
+      },
+      {
+        "barrio": "Manuel Belgrano",
+        "calles": ["Rivadavia", "Mitre", "San Juan", "Entre Ríos"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+        "verdes": { "dias": ["Miércoles"], "hora": "06:00" }
+      },
+      {
+        "barrio": "Mariano Moreno",
+        "calles": ["Corrientes", "O'Higgins", "Rawson", "Scavuzzo", "E. Orozco"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+        "verdes": { "dias": ["Miércoles"], "hora": "06:00" }
+      },
+      {
+        "barrio": "El Salto",
+        "calles": ["Sta. Cruz", "Cabo de Hornos", "Tierra del Fuego", "Abraham Molina"],
+        "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+        "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+        "verdes": { "dias": ["Lunes"], "hora": "06:00" }
+      }
+    ]
+  }
 }
