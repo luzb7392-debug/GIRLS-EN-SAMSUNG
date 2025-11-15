@@ -1,50 +1,43 @@
-def analizar_sentimiento(bot, message):
-    import warnings  # Permite manejar mensajes de advertencia
-    warnings.filterwarnings("ignore")  # Oculta las advertencias para que no molesten
+# sentiment_analysis.py (con paso de usuario)
+def pedir_opinion(bot, message):
+    """
+    Función que inicia la encuesta de opinión.
+    Pide al usuario que escriba su reseña y luego llama a analizar_sentimiento.
+    """
+    bot.send_message(message.chat.id, "💬 Escribí tu reseña sobre el servicio de recolección:")
+    bot.register_next_step_handler(message, analizar_sentimiento)
 
-    import telebot as tlb
-    import os
-    import logging  # Controla los mensajes del sistema (logs)
-    from transformers import pipeline  # Importa el modelo de análisis de sentimiento
-    from dotenv import load_dotenv  # Para leer el archivo .env
+def analizar_sentimiento(message, bot):
+    """
+    Analiza si el texto del usuario es positivo o negativo usando palabras clave.
+    """
 
-    # Oculta mensajes innecesarios
-    logging.getLogger("transformers").setLevel(logging.ERROR)
-    logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
-    logging.getLogger("torch").setLevel(logging.ERROR)
+    texto = message.text.lower()
 
-    # Cargar archivo .env
-    load_dotenv()
+    positivas = ["bien", "bueno", "excelente", "genial", "me gusta", "perfecto", "muy bueno"]
+    negativas = ["mal", "malo", "horrible", "pesimo", "terrible", "no funciona", "tarde"]
 
-    # Variables de entorno 
-    TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+    puntaje = 0
+    for palabra in positivas:
+        if palabra in texto:
+            puntaje += 1
+    for palabra in negativas:
+        if palabra in texto:
+            puntaje -= 1
 
-    if not TELEGRAM_TOKEN:
-        raise ValueError("No se encuentra el TOKEN de Telegram en el archivo .env")
-
-    # Instanciar objetos
-    bot = tlb.TeleBot(TELEGRAM_TOKEN)
-
-    # Cargamos el modelo de análisis de sentimiento
-    analizador = pipeline(
-        "sentiment-analysis",
-        model="distilbert/distilbert-base-uncased-finetuned-sst-2-english",
-        revision="714eb0f"
-    )
-
-    # Pedimos la reseña del usuario
-    reseña = input("Escribí tu reseña sobre el servicio de recolección: ")
-
-    # Ejecutamos el análisis
-    resultado = analizador(reseña)[0]
-    puntaje = resultado["score"] * 100  # Convertimos a porcentaje
-
-    # Según el puntaje, mostramos el mensaje adecuado
-    if puntaje >= 50:
-        print(f"😊 ¡Gracias por tu reseña!")
+    if puntaje > 0:
+        bot.send_message(
+            message.chat.id,
+            "😊 ¡Gracias por tu comentario positivo! Nos alegra que estés conforme."
+        )
+    elif puntaje < 0:
+        bot.send_message(
+            message.chat.id,
+            "😔 Lamentamos que tu experiencia no haya sido buena.\n"
+            "¡Gracias por contarnos! Lo tendremos en cuenta."
+        )
     else:
-        print("😔 Lamentamos que tu experiencia no haya sido buena.")
-        sugerencia = input("¿En qué podemos mejorar? 💬 ")
-        print(f"Gracias por tu comentario. Valoramos tu opinión: '{sugerencia}'")
-
-
+        bot.send_message(
+            message.chat.id,
+            "🙂 Gracias por tu comentario. ¡Lo tendremos en cuenta!"
+        )
