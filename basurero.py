@@ -1,7 +1,9 @@
-
+import telebot 
 import json
 import os
 from dotenv import load_dotenv
+import requests
+
 
 load_dotenv()
 
@@ -139,7 +141,7 @@ def responder(message):
 if __name__ == "__main__":
     print("Bot de Telegram IA (Groq + dataset + barrios) iniciado. Esperando mensajes...")
     bot.infinity_polling()
-=======
+
 
 DATASET2_PATH = "dataset2.json"
 
