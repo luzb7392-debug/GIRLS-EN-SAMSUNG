@@ -1,72 +1,102 @@
-# INTERACTUAR CON GBOT (dataset1.json)
-# INTERACTUAR CON GBOT (Datase1.json)
+# Interactuar con g-bot (dataset1.json)
+
 import json
 import os
 from groq import Groq
 from dotenv import load_dotenv
+import telebot
 
 load_dotenv()
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 groq_client = Groq(api_key=GROQ_API_KEY)
 
+# Historial por usuario para conversación
+conversaciones = {}
 
-# --- CARGAR DATASET ---
+
+#  CARGAR DATASET 
 def load_company_data():
     try:
         with open('dataset1.json', 'r', encoding='utf-8') as f:
             return json.load(f)
     except Exception as e:
-        print("Error cargando dataset:", e)
+        print("❌ Error cargando dataset:", e)
         return None
-
 
 company_data = load_company_data()
 
-# RESPUESTA CON GROQ
-def get_groq_response(user_message: str):
+
+#  IA CON GROQ + HISTORIAL
+def get_groq_response(user_id: int, user_message: str):
+
     if not company_data:
         return "❌ No puedo acceder a la información en este momento."
+
+    # Crear historial si no existe
+    if user_id not in conversaciones:
+        conversaciones[user_id] = []
 
     system_prompt = f"""
 Eres el asistente virtual de GIRSU.
 Responde únicamente usando el siguiente dataset.
 Si la información no está incluida, responde:
-"No cuento con esa información ahora mismo. Podés comunicarte con municipalidad@almafuerte.gov.ar 😊".
+"No cuento con esa información ahora mismo. Podés comunicarte con municipalidad@almafuerte.gov.ar 😊 o ☎️ Municipalidad de Almafuerte: +54 (3571) 558442".
 
 Dataset:
-{json.dumps(company_data, ensure_ascii=False, indent=2)}
+{json.dumps(company_data, ensure_ascii=False)}
 """
 
+    # Preparar mensajes para Groq
+    mensajes = [{"role": "system", "content": system_prompt}]
+    mensajes.extend(conversaciones[user_id])  # historial real
+    mensajes.append({"role": "user", "content": user_message})
+
+    # Llamada al modelo
     response = groq_client.chat.completions.create(
         model="llama-3.3-70b-versatile",
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_message}
-        ]
+        messages=mensajes,
+        temperature=0.2
     )
 
-    return response.choices[0].message.content.strip()
+    respuesta = response.choices[0].message.content.strip()
+
+    # Guardar intercambio en historial
+    conversaciones[user_id].append({"role": "user", "content": user_message})
+    conversaciones[user_id].append({"role": "assistant", "content": respuesta})
+
+    return respuesta
 
 
-# --- CONVERSACIÓN ---
+#  MENSAJE DE BIENVENIDA
 def send_welcome(bot, message):
+
+    user_id = message.chat.id
+
+    # Reiniciar historial de conversación para este usuario
+    conversaciones[user_id] = []
+
     bienvenida = (
-        "👋 ¡Hola! Soy *G-BOT*, tu asistente virtual del programa GIRSU Almafuerte 🌱\n\n"
-        "Podés *escribirme* o enviarme un *mensaje de voz* para hacerme consultas como:\n"
-        "• ¿Como puedo comunicarme con Girsu?\n"
-        "• ¿Cómo separar los residuos?\n"
+        "👋 ¡Hola! Soy *G-BOT*, tu asistente virtual de GIRSU Almafuerte 🌱\n\n"
+        "Podés *escribirme* o enviarme un *mensaje de voz* para consultar sobre:\n"
+        "• ¿Como puedo comunicarme con Girsu?\n" 
+        "• ¿Cómo separar los residuos?\n" 
         "• ¿Qué puedo reciclar?\n\n"
-        "🗣️ Escribí o mandá tu consulta ahora 👇"
+        "• Información del programa GIRSU\n\n"
+        " 👇Decime tu consulta!! "
     )
-    bot.send_message(message.chat.id, bienvenida, parse_mode="Markdown")
+    bot.send_message(user_id, bienvenida, parse_mode="Markdown")
+
+    # Activar conversación
     bot.register_next_step_handler(message, lambda m: procesar_consulta(bot, m))
 
-
-# --- PROCESAR TEXTO O AUDIO ---
+#  PROCESAR TEXTO O AUDIO
 def procesar_consulta(bot, message):
 
-    # 🔹 Si el usuario manda un AUDIO → convertir a texto
+    user_id = message.chat.id
+
+   
+    # SI ES AUDIO → Transcribir
     if message.voice:
         try:
             file_info = bot.get_file(message.voice.file_id)
@@ -76,35 +106,45 @@ def procesar_consulta(bot, message):
             with open("temp.ogg", "wb") as f:
                 f.write(file_data)
 
-            # Usar Groq Whisper
-            audio_text = groq_client.audio.transcriptions.create(
-                file="temp.ogg",
-                model="whisper-large-v3-turbo"
-            )
+            # Transcribir audio – archivo cerrado automáticamente
+            try:
+                with open("temp.ogg", "rb") as audio_file:
+                    audio = groq_client.audio.transcriptions.create(
+                        file=audio_file,
+                        model="whisper-large-v3-turbo"
+                    )
+            finally:
+                # borrar archivo temp sin dejarlo bloqueado
+                if os.path.exists("temp.ogg"):
+                    try:
+                        os.remove("temp.ogg")
+                    except Exception as e:
+                        print("⚠ No pude borrar temp.ogg:", e)
 
-            consulta = audio_text.text.strip()
+            consulta = audio.text.strip()
 
         except Exception as e:
-            bot.send_message(message.chat.id, "❌ No pude procesar tu audio.")
-            print("Error conversión audio:", e)
+            print("Error procesando audio:", e)
+            bot.send_message(user_id, "❌ No pude procesar tu mensaje de voz.")
             return
 
-    # 🔹 Si escribió texto
+    
+    # SI ES TEXTO NORMAL
     elif message.text:
         consulta = message.text.strip()
 
     else:
-        bot.send_message(message.chat.id, "❗ Enviame un mensaje de voz o escribí algo.")
+        bot.send_message(user_id, "❗ Enviame un mensaje de voz o escribí algo.")
         return
 
-    #  Enviar acción "escribiendo"
-    bot.send_chat_action(message.chat.id, "typing")
+    # Mostrar escribiendo…
+    bot.send_chat_action(user_id, "typing")
 
-    #  Obtener respuesta IA
-    respuesta = get_groq_response(consulta)
+    # Obtener respuesta IA con historial
+    respuesta = get_groq_response(user_id, consulta)
 
-    #  Responder al usuario
-    bot.send_message(message.chat.id, respuesta)
+    # Enviar respuesta
+    bot.send_message(user_id, respuesta)
 
-    #  Seguir conversando automáticamente
+    # Mantener la conversación activa
     bot.register_next_step_handler(message, lambda m: procesar_consulta(bot, m))
