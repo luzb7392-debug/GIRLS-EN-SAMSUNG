@@ -1,5 +1,4 @@
-##################################################################################################
-# Bot de Telegram que responde usando la IA de Groq y dataset.json
+#  Saber cuándo pasa el basurero por mi casa (dataset2.json)
 import telebot
 import requests
 import json
@@ -11,7 +10,7 @@ TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions'
-DATASET_PATH = 'dataset.json' # Ruta al archivo JSON que contiene el dataset de preguntas y respuestas
+DATASET_PATH = 'dataset2.json' # Ruta al archivo JSON que contiene el dataset de preguntas y respuestas
 
 # Función para cargar el dataset desde el archivo JSON
 def cargar_dataset():

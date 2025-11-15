@@ -1,3 +1,4 @@
+
 [
   {
     "barrio": "Las Heras",
@@ -48,3 +49,95 @@
     "info": "En Barrio Tierras del Este la recolección de residuos comunes es lunes, miércoles y viernes a partir de las 17 h. Residuos selectivos y verdes con aviso municipal."
   }
 ]
+=======
+
+{
+  "tema": "Recolección por calles - Almafuerte",
+  "descripcion": "Dataset con días y horarios exactos de recolección (comunes, selectivos y verdes) por cada barrio y sector de la ciudad de Almafuerte.",
+  "calles": [
+    {
+      "barrio": "Pinares",
+      "calles": ["Misiones", "Río Cuarto", "Río Tercero", "Río Quinto", "Río Segundo", "Av. Dottori"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+      "verdes": { "dias": ["Lunes", "Viernes"], "hora": "06:00" }
+    },
+    {
+      "barrio": "Tierras del Este",
+      "calles": ["Franklin", "Pasteur", "J.B. Pazos", "Brasil", "Uruguay", "25 de Mayo", "Castelli"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+      "verdes": { "dias": ["Lunes", "Viernes"], "hora": "06:00" }
+    },
+    {
+      "barrio": "Tierras del Fundador",
+      "calles": ["Killa Pura", "Apu Waira", "Runa Kay", "Mayu Maman", "Rapacina", "Anka Kay"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+      "verdes": { "dias": ["Lunes", "Viernes"], "hora": "06:00" }
+    },
+    {
+      "barrio": "Arenales",
+      "calles": ["Belgrano", "Chile", "Paraguay", "España", "Italia"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+      "verdes": { "dias": ["Jueves"], "hora": "06:00" }
+    },
+    {
+      "barrio": "Las Heras",
+      "calles": ["Urquiza", "Mitre", "Urdapilleta", "Roca", "Saavedra", "Entre Ríos"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+      "verdes": { "dias": ["Jueves"], "hora": "06:00" }
+    },
+    {
+      "barrio": "Eva Perón",
+      "calles": ["Fragueiro", "Palacios", "Gardel", "Santa Fe"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+      "verdes": { "dias": ["Jueves"], "hora": "06:00" }
+    },
+    {
+      "barrio": "Sol de Mayo",
+      "calles": ["Sarmiento", "9 de Julio", "España", "Italia", "J.M. Estrada"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+      "verdes": { "dias": ["Martes"], "hora": "06:00" }
+    },
+    {
+      "barrio": "Parque",
+      "calles": ["Paso", "Sarmiento", "San Martín", "Chile", "Paraguay"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+      "verdes": { "dias": ["Viernes"], "hora": "06:00" }
+    },
+    {
+      "barrio": "Belgrano",
+      "calles": ["Belgrano", "Lavalle", "Entre Ríos", "San Luis"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+      "verdes": { "dias": ["Viernes"], "hora": "06:00" }
+    },
+    {
+      "barrio": "Manuel Belgrano",
+      "calles": ["Rivadavia", "Mitre", "San Juan", "Entre Ríos"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+      "verdes": { "dias": ["Miércoles"], "hora": "06:00" }
+    },
+    {
+      "barrio": "Mariano Moreno",
+      "calles": ["Corrientes", "O'Higgins", "Rawson", "Scavuzzo", "E. Orozco"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Martes", "Viernes"], "hora": "06:00" },
+      "verdes": { "dias": ["Miércoles"], "hora": "06:00" }
+    },
+    {
+      "barrio": "El Salto",
+      "calles": ["Sta. Cruz", "Cabo de Hornos", "Tierra del Fuego", "Abraham Molina"],
+      "comunes": { "dias": ["Lunes", "Miércoles", "Viernes"], "hora": "17:00" },
+      "selectivos": { "dias": ["Lunes", "Jueves"], "hora": "06:00" },
+      "verdes": { "dias": ["Lunes"], "hora": "06:00" }
+    }
+  ]
+}
