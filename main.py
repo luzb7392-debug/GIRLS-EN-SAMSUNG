@@ -4,6 +4,7 @@ import os
 import bot_voz1 as bot_voz         # Interactuar con G-BOT
 import imagen           # Saber si un objeto es reciclable o no
 import ia               # Saber información sobre G-BOT / cuándo pasa el basurero
+import ia_info          # Información sobre GIRSU
 import salir            # Opción de salir
 from sentiment_analysis import analizar_sentimiento  # Dejanos tu opinión
 from dotenv import load_dotenv
@@ -12,7 +13,7 @@ load_dotenv()
 TOKEN = os.getenv('TELEGRAM_TOKEN')
 bot = telebot.TeleBot(TOKEN)
 
-# --- MENÚ PRINCIPAL ---
+# MENÚ PRINCIPAL
 @bot.message_handler(commands=['start'])
 def menu_principal(message):
     markup = types.InlineKeyboardMarkup(row_width=1)
@@ -42,13 +43,13 @@ def menu_callback(call):
         bot_voz.send_welcome(bot, call.message)
 
     elif call.data == "basurero":
-        bot.send_message(call.message.chat.id, "🏘️ Decime el *nombre de tu barrio*:", parse_mode="Markdown")
+        ia.send_message(call.message.chat.id, "🏘️ Decime el *nombre de tu barrio*:", parse_mode="Markdown")
 
     elif call.data == "reciclable":
         bot.send_message(call.message.chat.id, "📸 Enviá una imagen y te digo si es reciclable ✅")
 
     elif call.data == "info":
-        ia.responder(call.message)
+        ia_info.responder(call.message)
 
     elif call.data == "opinion":
         analizar_sentimiento(bot, call.message)
