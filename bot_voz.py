@@ -4,13 +4,10 @@ from groq import Groq
 from dotenv import load_dotenv
 import subprocess
 
-
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-
 groq_client = Groq(api_key=GROQ_API_KEY)
-
 
 def cargar_dataset1():
     try:
@@ -21,7 +18,6 @@ def cargar_dataset1():
         return []
 
 dataset = cargar_dataset1()
-
 
 def buscar_respuesta(pregunta):
     pregunta = pregunta.strip().lower()
@@ -34,7 +30,6 @@ def buscar_respuesta(pregunta):
                 if variante.strip().lower() == pregunta:
                     return item.get("respuesta")
     return None
-
 
 def respuesta_groq(texto):
     prompt = (
@@ -55,6 +50,18 @@ def respuesta_groq(texto):
     return response.choices[0].message.content.strip()
 
 
+def ogg_a_wav(ruta_ogg):
+    ruta_wav = ruta_ogg.replace(".ogg", ".wav")
+    try:
+        subprocess.run([
+            "ffmpeg", "-y", "-i", ruta_ogg, ruta_wav
+        ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        return ruta_wav
+    except Exception as e:
+        print("Error convirtiendo audio:", e)
+        return None
+
+
 def audio_a_texto(ruta_ogg):
     try:
         response = groq_client.audio.transcriptions.create(
@@ -67,36 +74,24 @@ def audio_a_texto(ruta_ogg):
         return None
 
 
-def convertir_a_wav(ruta_ogg):
-    """Convierte un archivo .ogg a .wav para que pueda procesarlo la IA"""
-    ruta_wav = ruta_ogg.replace(".ogg", ".wav")
-    try:
-        subprocess.run(
-            ["ffmpeg", "-y", "-i", ruta_ogg, "-ar", "16000", "-ac", "1", ruta_wav],
-            check=True
-        )
-        return ruta_wav
-    except Exception as e:
-        print("Error convirtiendo audio:", e)
-        return None
-
-
 def procesar_audio(ruta_audio):
-    # Convertimos automáticamente si el audio no es WAV
-    if not ruta_audio.lower().endswith(".wav"):
-        ruta_audio = convertir_a_wav(ruta_audio)
-        if not ruta_audio:
-            return "❌ No pude convertir tu audio."
+    # Convertimos .ogg a .wav compatible
+    ruta_wav = ogg_a_wav(ruta_audio)
+    if not ruta_wav:
+        return "❌ No pude procesar tu audio."
 
-    texto = audio_a_texto(ruta_audio)
+    # Procesamos audio con Groq/Whisper
+    texto = audio_a_texto(ruta_wav)
     if not texto:
         return "❌ No pude procesar tu audio."
+
+    # Limpiamos archivo temporal
+    os.remove(ruta_wav)
 
     return procesar_texto(texto)
 
 
 def procesar_texto(texto):
-    
     respuesta = buscar_respuesta(texto)
     if respuesta:
         return respuesta
@@ -109,3 +104,4 @@ def send_welcome(bot, message):
         message.chat.id,
         "👋 Hola, soy G-BOT.\nPodés preguntarme lo que quieras sobre GIRSU."
     )
+
