@@ -20,7 +20,7 @@ logging.getLogger("transformers").setLevel(logging.ERROR)
 logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
 logging.getLogger("torch").setLevel(logging.ERROR)
 
-=======
+
 # Cargamos el modelo UNA SOLA VEZ (si no, tarda mucho)
 analizador = pipeline(
     "sentiment-analysis",
