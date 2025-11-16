@@ -37,12 +37,13 @@ def pedir_opinion(bot, message):
         "💬 *Queremos saber tu opinión*\n\nEscribinos un comentario sobre el servicio:",
         parse_mode="Markdown"
     )
-    bot.register_next_step_handler(message, procesar_opinion)
+    # FIX 1: enviar bot correctamente a la siguiente función
+    bot.register_next_step_handler(message, lambda msg: procesar_opinion(msg, bot))
 
 # ------------------------------------------------
 # FUNCIÓN: Analizar sentimiento del mensaje
 # ------------------------------------------------
-def procesar_opinion(message):
+def procesar_opinion(message, bot):  # FIX 2: agregar parámetro bot
     texto = message.text
 
     if not texto:
@@ -64,4 +65,5 @@ def procesar_opinion(message):
             "Gracias por contarnos, ¡vamos a trabajar para mejorar!"
         )
 
-    message.bot.send_message(message.chat.id, respuesta, parse_mode="Markdown")
+    # FIX 3: usar bot.send_message en lugar de message.bot.send_message
+    bot.send_message(message.chat.id, respuesta, parse_mode="Markdown")
