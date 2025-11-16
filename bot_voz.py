@@ -23,12 +23,19 @@ def cargar_dataset1():
 dataset = cargar_dataset1()
 
 
+
 def buscar_respuesta(pregunta):
     pregunta = pregunta.strip().lower()
-    for item in dataset:
-        if item["pregunta"].strip().lower() == pregunta:
-            return item["respuesta"]
+
+    for categoria in dataset:
+        for item in categoria.get("preguntas", []):
+            variantes = item.get("variantes_pregunta", [])
+            
+            for variante in variantes:
+                if variante.strip().lower() == pregunta:
+                    return item.get("respuesta")
     return None
+
 
 
 def respuesta_groq(texto):
