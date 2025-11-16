@@ -23,7 +23,6 @@ def cargar_dataset1():
 dataset = cargar_dataset1()
 
 
-
 def buscar_respuesta(pregunta):
     pregunta = pregunta.strip().lower()
 
@@ -37,13 +36,12 @@ def buscar_respuesta(pregunta):
     return None
 
 
-
 def respuesta_groq(texto):
     prompt = (
         "Eres un asistente del sistema GIRSU. Si la información "
         "no está en el dataset, responde: "
         "'No cuento con esa información ahora mismo. "
-        "Podés comunicarte con municipalidad@almafuerte.gov.ar 😊'."
+        "Podés comunicarte con municipalidad@almafuerte.gov.ar 😊'." 
     )
 
     response = groq_client.chat.completions.create(
@@ -69,7 +67,27 @@ def audio_a_texto(ruta_ogg):
         return None
 
 
+def convertir_a_wav(ruta_ogg):
+    """Convierte un archivo .ogg a .wav para que pueda procesarlo la IA"""
+    ruta_wav = ruta_ogg.replace(".ogg", ".wav")
+    try:
+        subprocess.run(
+            ["ffmpeg", "-y", "-i", ruta_ogg, "-ar", "16000", "-ac", "1", ruta_wav],
+            check=True
+        )
+        return ruta_wav
+    except Exception as e:
+        print("Error convirtiendo audio:", e)
+        return None
+
+
 def procesar_audio(ruta_audio):
+    # Convertimos automáticamente si el audio no es WAV
+    if not ruta_audio.lower().endswith(".wav"):
+        ruta_audio = convertir_a_wav(ruta_audio)
+        if not ruta_audio:
+            return "❌ No pude convertir tu audio."
+
     texto = audio_a_texto(ruta_audio)
     if not texto:
         return "❌ No pude procesar tu audio."
