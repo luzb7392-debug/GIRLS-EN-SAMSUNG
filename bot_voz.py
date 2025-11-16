@@ -15,7 +15,7 @@ groq_client = Groq(api_key=GROQ_API_KEY)
 def cargar_dataset1():
     try:
         with open("dataset1.json", "r", encoding="utf-8") as f:
-            return json.load(f)
+            return json.load(f)["categorias"]
     except Exception as e:
         print("Error cargando dataset1:", e)
         return []
